@@ -2,7 +2,7 @@ const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 var text=[],
-    enAnswer="kokugo",count=0;
+    enAnswer="kokugo",count=0,i;
 function drawBlock(letter){
     ctx.beginPath();
     ctx.fillStyle="#000000";
