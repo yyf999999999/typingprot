@@ -22,7 +22,7 @@ function drawBlock(letter){
 function main(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     count++;
-    if (count%25==0){
+    if (count%75==0){
         var number=Math.floor(Math.random()*textWarehouse.length),textX;
         if (textWarehouse[number].jn>textWarehouse[number].en*2){
             textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24))+9;
