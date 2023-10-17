@@ -9,7 +9,7 @@ function drawBlock(letter){
     ctx.font="24px Arial";
     if (letter.en.length>letter.jn.length*2){
         ctx.fillText(letter.en,letter.x,letter.y);
-        var inum=(letter.en.match(new RegExp('['+ifjl+']','g'))||[]).length||0;
+        var inum=(letter.en.match(new RegExp('['+"iftjl"+']','g'))||[]).length||0;
         ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6-(inum-1)*3,letter.y-24);
         ctx.rect(letter.x-8,letter.y-51,letter.en.length*12+16-(inum-1)*6,57);
         console.log(inum);
