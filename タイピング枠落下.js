@@ -1,4 +1,4 @@
-console.log("やるぞやるやる2");
+console.log("やるぞやるやる3");
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
