@@ -1,4 +1,4 @@
-console.log("やるぞやるやる");
+console.log("やるぞやるやる2");
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
@@ -11,8 +11,8 @@ function drawBlock(letter){
     if (letter.en.length>letter.jn.length*2){
         ctx.fillText(letter.en,letter.x+6,letter.y);
         var inum=(letter.en.match(new RegExp('['+"iftjl"+']','g'))||[]).length||0;
-        ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6-(inum-1)*3+6,letter.y-24);
-        ctx.rect(letter.x-12,letter.y-51,letter.en.length*16,57);
+        ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6+6,letter.y-24);
+        ctx.rect(letter.x-12,letter.y-51,letter.en.length*15,57);
         console.log(inum);
     }else{
         ctx.fillText(letter.en,letter.x+(letter.jn.length*2-letter.en.length)*6,letter.y);
