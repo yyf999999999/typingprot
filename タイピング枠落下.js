@@ -8,10 +8,10 @@ function drawBlock(letter){
     ctx.fillStyle="#000000";
     ctx.font="24px Arial";
     if (letter.en.length>letter.jn.length*2){
-        ctx.fillText(letter.en,letter.x,letter.y);
+        ctx.fillText(letter.en,letter.x+6,letter.y);
         var inum=(letter.en.match(new RegExp('['+"iftjl"+']','g'))||[]).length||0;
-        ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6-(inum-1)*3,letter.y-24);
-        ctx.rect(letter.x-16,letter.y-51,letter.en.length*16+24-(inum-1)*6,57);
+        ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6-(inum-1)*3+6,letter.y-24);
+        ctx.rect(letter.x-12,letter.y-51,letter.en.length*16+24-(inum-1)*6,57);
         console.log(inum);
     }else{
         ctx.fillText(letter.en,letter.x+(letter.jn.length*2-letter.en.length)*6,letter.y);
@@ -33,10 +33,10 @@ function main(){
     if (count%75==0){
         var number=Math.floor(Math.random()*textWarehouse.length),textX;
         if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
-            textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-32))+9;
+            textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24))+9;
             console.log(textWarehouse[number].jn);
         }else{
-            textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12-32))+9;
+            textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12-24))+9;
         }
         text.push({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en});
     }
