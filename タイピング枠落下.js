@@ -12,7 +12,7 @@ function drawBlock(letter){
         ctx.fillText(letter.en,letter.x,letter.y);
         ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6,letter.y-24);
         var inum=(letter.en.match(new RegExp('['+"iftjl"+']','g'))||[]).length||0;
-        ctx.rect(letter.x-8,letter.y-51,letter.en.length*12+16-(inum-1)*4,57);
+        ctx.rect(letter.x-12,letter.y-51,letter.en.length*12+24-(inum-1)*4,57);
     }else{
         ctx.fillText(letter.en,letter.x+(letter.jn.length*2-letter.en.length)*6,letter.y);
         ctx.fillText(letter.jn,letter.x,letter.y-24);
