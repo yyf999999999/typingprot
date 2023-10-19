@@ -34,7 +34,7 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
         ["xka","lka"],["xke","lke"],["-"],[","],["."],["/"]],
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
-    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput="",enWrite={part:"",all:""};
+    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput="",enWrite="";
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
@@ -171,7 +171,7 @@ function input(e){
             enInput=enInput.slice(0,-1);
         }
         //enAnswer=jnToEn(printCharacter+ans.splice(1).join(""));
-        enWrite={part:jnToEn(printCharacter),all:jnToEn(printCharacter+ans.splice(1).join(""))};
+        enWrite=jnToEn(printCharacter+ans.splice(1).join(""));
         //enSentence.innerHTML="ローマ字に変換した文 : "+jnToEn(printCharacter+ans.splice(1).join(""));
         //jnSentence2.innerHTML="入力した日本語分 : "+enToJn(enInput);
     }
