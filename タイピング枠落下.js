@@ -4,6 +4,7 @@ const ctx=canvas.getContext("2d");
 import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 export * from "./タイピング.js";
 import * as oF from "./タイピング.js";
+console.log(oF);
 var text=[],count=0,i;
     function drawBlock(letter){
         if (oF.enWrite!=""&&i==0){
