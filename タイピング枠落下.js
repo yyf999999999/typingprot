@@ -26,6 +26,7 @@ var text=[],count=0,i;
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
             ctx.fillText(enInput,tX,letter.y);
             ctx.strokeStyle="#FF0000";
+            console.log(letter.enC.type);
             enAnswer=letter.enC;
         }else{
             ctx.strokeStyle="#000000";
