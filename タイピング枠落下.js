@@ -57,6 +57,7 @@ var text=[],count=0,letter,i;
         }
         for (i=0;i<text.length;i++){
             text[i].y+=0.25;
+            console.log(text[i]);
             drawBlock(text[i]);
         }
         console.log(enInput);
