@@ -187,4 +187,4 @@ function reflection(e){
     }
 }
 document.addEventListener("keypress",input,false);
-export * from "./タイピング.js";
+export {enWrite,enInput,enAnswer,enToJn};
