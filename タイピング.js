@@ -35,7 +35,7 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
         ["xka","lka"],["xke","lke"],["-"],[","],["."],["/"]],
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
-    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput="",enAnswer={text:"定義可能のはずやのに..."},enWrite="",i,j;
+    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:"定義可能のはずやのに..."},enWrite={text:""},i,j;
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
@@ -93,15 +93,15 @@ function enToJn(letter){
 }
 function input(e){
     if (e.key!="Enter"){
-        enInput+=e.key;
-        var inp=enToJn(enInput).split(""),ans=enToJn(enAnswer.text).split(""),printCharacter=enInput,prChD=false;
+        enInput.text+=e.key;
+        var inp=enToJn(enInput.text).split(""),ans=enToJn(enAnswer.text).split(""),printCharacter=enInput.text,prChD=false;
         while (inp[0]==ans[0]/*&&jn.includes(inp[0])*/&&ans.length!=0){
             inp=inp.slice(1);ans=ans.slice(1);
         }
         for (i=0;i<inp.length;i++){
             printCharacter=printCharacter.slice(0,-1);
         }
-        if (enToJn(enInput).slice(0,-1)!==enToJn(enAnswer.text)){
+        if (enToJn(enInput.text).slice(0,-1)!==enToJn(enAnswer.text)){
             if (jnVowel.includes(inp.join(""))){
                 inp[0]=enVowel[jnVowel.indexOf(inp[0])];
             }
@@ -164,15 +164,15 @@ function input(e){
                     tfC=tfC||tfI;
                 }
                 if (!tfC){
-                    enInput=enInput.slice(0,-1);
+                    enInput.text=enInput.text.slice(0,-1);
                     ans.unshift("");
                 }
             }
         }else{
-            enInput=enInput.slice(0,-1);
+            enInput.text=enInput.text.slice(0,-1);
         }
         //enAnswer=jnToEn(printCharacter+ans.splice(1).join(""));
-        enWrite=jnToEn(printCharacter+ans.splice(1).join(""));
+        enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
         //enSentence.innerHTML="ローマ字に変換した文 : "+jnToEn(printCharacter+ans.splice(1).join(""));
         //jnSentence2.innerHTML="入力した日本語分 : "+enToJn(enInput);
     }

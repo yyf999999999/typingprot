@@ -2,14 +2,13 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-//var enAnswer;
 console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
 console.log(enAnswer);
 var text=[],count=0,letter,i;
     function drawBlock(letter){
-        if (enWrite!=""&&i==0){
-            letter.en=enWrite;
+        if (enWrite.text!=""&&i==0){
+            letter.en=enWrite.text;
         }
         ctx.beginPath();
         ctx.fillStyle="#000000";
@@ -28,7 +27,7 @@ var text=[],count=0,letter,i;
         if (i==0){
             ctx.fillStyle="FF0000";
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
-            ctx.fillText(enInput,tX,letter.y);
+            ctx.fillText(enInput.text,tX,letter.y);
             ctx.strokeStyle="#FF0000";
             console.log(letter.enC,typeof(letter.enC));
             enAnswer.text=letter.enC;
@@ -52,10 +51,10 @@ var text=[],count=0,letter,i;
             text.push({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en,enC:textWarehouse[number].en});
         }
         if (text.length>0){
-            if (enToJn(enInput)==enToJn(text[0].en)){
+            if (enToJn(enInput.text)==enToJn(text[0].en)){
                 text.shift();
-                enInput="";
-                enWrite="";
+                enInput.text="";
+                enWrite.text="";
                 text[0].en=text[0].enC;
             }
         }
@@ -64,6 +63,6 @@ var text=[],count=0,letter,i;
             console.log(text[i]);
             drawBlock(text[i]);
         }
-        console.log(enInput);
+        console.log(enInput.text);
     }
     setInterval(main,10);
