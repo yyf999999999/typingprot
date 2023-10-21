@@ -17,7 +17,7 @@ var text=[],count=0,letter,i;
             ctx.fillText(letter.en,letter.x,letter.y);
             ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6,letter.y-24);
             var inum=(letter.en.match(new RegExp('['+"iftjl"+']','g'))||[]).length||0;
-            ctx.rect(letter.x-16,letter.y-51,letter.en.length*16+32,57);
+            ctx.rect(letter.x-16,letter.y-51,letter.en.length*12+32,57);
         }else{
             ctx.fillText(letter.en,letter.x+(letter.jn.length*2-letter.en.length)*6,letter.y);
             ctx.fillText(letter.jn,letter.x,letter.y-24);
@@ -43,7 +43,7 @@ var text=[],count=0,letter,i;
         if (count%150==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*32))+9;
+                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24))+9;
                 console.log(textWarehouse[number].jn);
             }else{
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12))+9;
