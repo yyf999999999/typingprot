@@ -187,5 +187,6 @@ function reflection(e){
         jnContent.value="";*/
     }
 }
+enAnswer="値変えまーすwww";
 document.addEventListener("keypress",input,false);
 export {enToJn,enInput,enAnswer,enWrite};
