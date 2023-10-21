@@ -172,21 +172,8 @@ function input(e){
         }else{
             enInput.text=enInput.text.slice(0,-1);
         }
-        //enAnswer=jnToEn(printCharacter+ans.splice(1).join(""));
         back.ans=JSON.parse(JSON.stringify(ans));back.printCharacter=printCharacter;
         enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
-        //enSentence.innerHTML="ローマ字に変換した文 : "+jnToEn(printCharacter+ans.splice(1).join(""));
-        //jnSentence2.innerHTML="入力した日本語分 : "+enToJn(enInput);
-    }
-}
-function reflection(e){
-    if (e.key=="Enter"){
-        /*jnSentence1.innerHTML="元の日本語文 : "+jnContent.value;
-        enSentence.innerHTML="ローマ字に変換した文 : "+jnToEn(jnContent.value);
-        jnSentence2.innerHTML="入力した日本語文 : ";
-        enAnswer=jnToEn(jnContent.value);
-        enInput="";
-        jnContent.value="";*/
     }
 }
 enAnswer.text="値変えまーすwww";
