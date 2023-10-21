@@ -2,6 +2,7 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
+var enAnswer;
 console.log(enAnswer);
 enAnswer="なんでや!";
 console.log(enAnswer);
