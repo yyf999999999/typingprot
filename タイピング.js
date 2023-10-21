@@ -37,6 +37,7 @@ function varDef(){
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
     jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput="",enAnswer="",enWrite="",i,j;
 }
+varDef();
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
