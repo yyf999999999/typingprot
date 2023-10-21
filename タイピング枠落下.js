@@ -4,7 +4,7 @@ const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 //var enAnswer;
 console.log(enAnswer,typeof(enAnswer));
-enAnswer="なんでや!";
+enAnswer.text="なんでや!";
 console.log(enAnswer);
 var text=[],count=0,letter,i;
     function drawBlock(letter){
@@ -31,7 +31,7 @@ var text=[],count=0,letter,i;
             ctx.fillText(enInput,tX,letter.y);
             ctx.strokeStyle="#FF0000";
             console.log(letter.enC,typeof(letter.enC));
-            enAnswer=letter.enC;
+            enAnswer.text=letter.enC;
         }else{
             ctx.strokeStyle="#000000";
         }
