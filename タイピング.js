@@ -1,4 +1,5 @@
-var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と",
+function varDef(){
+    var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と",
         "な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ",
         "わ","ゐ","ゑ","を","ん","ヴ","が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","ぢ","づ","で","ど",
         "ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","いぇ","うぁ","うぃ","うぇ","うぉ","きゃ","きぃ","きゅ","きぇ","きょ",
@@ -35,7 +36,7 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
     jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput="",enAnswer="",enWrite="",i,j;
-console.log(enAnswer);
+}
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
@@ -188,4 +189,4 @@ function reflection(e){
     }
 }
 document.addEventListener("keypress",input,false);
-export {enWrite,enInput,enAnswer,enToJn};
+export {enWrite,enInput,enAnswer,enToJn,varDef};
