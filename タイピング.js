@@ -167,7 +167,6 @@ function input(e){
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
                     printCharacter=back.printCharacter;ans=back.ans;
-                    ans.unshift("");
                 }
             }
         }else{
