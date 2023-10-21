@@ -1,8 +1,8 @@
 import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
-import {enToJn,varDef} from "./タイピング.js";
+import {enToJn,enInput,enAnswer,enWrite} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-varDef();
+console.log(enAnswer);
 enAnswer="なんでや!";
 console.log(enAnswer);
 var text=[],count=0,letter,i;
