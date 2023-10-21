@@ -35,7 +35,8 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
         ["xka","lka"],["xke","lke"],["-"],[","],["."],["/"]],
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
-    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:"定義可能のはずやのに..."},enWrite={text:""},i,j;
+    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:"定義可能のはずやのに..."},
+    enWrite={text:""},back={printCharacter:"",ans:""},i,j;
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
@@ -165,6 +166,7 @@ function input(e){
                 }
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
+                    printCharacter=back.printCharacter;ans=back.ans;
                     ans.unshift("");
                 }
             }
@@ -172,6 +174,7 @@ function input(e){
             enInput.text=enInput.text.slice(0,-1);
         }
         //enAnswer=jnToEn(printCharacter+ans.splice(1).join(""));
+        back.ans=JSON.parse(JSON.stringify(ans));back.printCharacter=printCharacter;
         enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
         //enSentence.innerHTML="ローマ字に変換した文 : "+jnToEn(printCharacter+ans.splice(1).join(""));
         //jnSentence2.innerHTML="入力した日本語分 : "+enToJn(enInput);

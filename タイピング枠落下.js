@@ -53,8 +53,8 @@ var text=[],count=0,letter,i;
         if (text.length>0){
             if (enToJn(enInput.text)==enToJn(text[0].en)){
                 text.shift();
-                enInput.text="";
-                enWrite.text="";
+                enInput.text="";enWrite.text="";
+                back.ans="";back.printCharacter="";
                 text[0].en=text[0].enC;
             }
         }
