@@ -2,6 +2,8 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enWrite,enInput,enAnswer,enToJn} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
+enAnswer="なんでや!";
+console.log(enAnswer);
 var text=[],count=0,letter,i;
     function drawBlock(letter){
         if (enWrite!=""&&i==0){
