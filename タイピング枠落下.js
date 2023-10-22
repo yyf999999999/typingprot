@@ -64,9 +64,7 @@ var text=[],count=0,letter,i;
         }
         if (text[0].y>560){
             console.log("GAMEOVER");
-            while (true){
-
-            }
+            clearInterval();
         }
         console.log(enInput.text);
     }
