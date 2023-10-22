@@ -16,7 +16,6 @@ var text=[],count=0,letter,i;
         if (letter.en.length>letter.jn.length*2){
             ctx.fillText(letter.en,letter.x,letter.y);
             ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6,letter.y-24);
-            var inum=(letter.en.match(new RegExp('['+"iftjl"+']','g'))||[]).length||0;
             ctx.rect(letter.x-16,letter.y-51,letter.en.length*12+32,57);
         }else{
             ctx.fillText(letter.en,letter.x+(letter.jn.length*2-letter.en.length)*6,letter.y);
@@ -54,7 +53,7 @@ var text=[],count=0,letter,i;
             if (enToJn(enInput.text)==enToJn(text[0].en)){
                 text.shift();
                 enInput.text="";enWrite.text="";
-                back.ans="";back.printCharacter="";
+                back.ans=text[0].enC;back.printCharacter="";
                 text[0].en=text[0].enC;
             }
         }
