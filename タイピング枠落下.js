@@ -64,7 +64,7 @@ var text=[],count=0,letter,i;
         }
         if (text[0].y>536){
             console.log("GAMEOVER");
-            while (True){
+            while (true){
 
             }
         }
