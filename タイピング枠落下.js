@@ -1,5 +1,5 @@
 import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
-import {enToJn,enInput,enAnswer,enWrite} from "./タイピング.js";
+import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 console.log(enAnswer,typeof(enAnswer));
@@ -73,9 +73,9 @@ var text=[],fText=[],count=0,letter,i,interval;
         }
         if (fText.length>0)/* if (fText[0].y<-48)*/{
             //fText.shift();
-            console.log(fText[0].y);
+            console.log(fText[0]);
         }
-        console.log(enInput.text);
+        //console.log(enInput.text);
     }
 interval=setInterval(main,10);
 interval;
