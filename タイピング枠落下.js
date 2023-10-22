@@ -5,7 +5,7 @@ const ctx=canvas.getContext("2d");
 console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
 console.log(enAnswer);
-var text=[],count=0,letter,i;
+var text=[],count=0,letter,i,interval;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
             letter.en=enWrite.text;
@@ -64,8 +64,9 @@ var text=[],count=0,letter,i;
         }
         if (text[0].y>560){
             console.log("GAMEOVER");
-            clearInterval();
+            clearInterval(interval);
         }
         console.log(enInput.text);
     }
-    setInterval(main,10);
+interval=setInterval(main,10);
+interval;
