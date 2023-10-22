@@ -167,14 +167,16 @@ function input(e){
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
                     if (enInput.length>0) printCharacter=back.printCharacter;ans=back.ans;
-                    console.log(printCharacter,"|",ans.join(""));
+                    
                 }
             }
         }else{
             enInput.text=enInput.text.slice(0,-1);
         }
+        console.log(printCharacter,"|",ans.join(""));
         back.ans=JSON.parse(JSON.stringify(ans));back.printCharacter=printCharacter;
         enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
+        console.log(printCharacter,"|",ans.join(""));
     }
 }
 enAnswer.text="値変えまーすwww";
