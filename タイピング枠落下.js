@@ -5,7 +5,7 @@ const ctx=canvas.getContext("2d");
 console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
 console.log(enAnswer);
-var text=[],count=0,letter,i,interval;
+var text=[],fText=[],count=0,letter,i,interval;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
             letter.en=enWrite.text;
@@ -51,9 +51,10 @@ var text=[],count=0,letter,i,interval;
         }
         if (text.length>0){
             if (enToJn(enInput.text)==enToJn(text[0].en)){
+                fText.push(text[0]);
                 text.shift();
                 enInput.text="";enWrite.text="";
-                back.ans=text[0].enC;back.printCharacter="";
+                back.ans="";back.printCharacter="";
                 text[0].en=text[0].enC;
             }
         }
@@ -62,9 +63,16 @@ var text=[],count=0,letter,i,interval;
             //console.log(text[i]);
             drawBlock(text[i]);
         }
+        for (i=1;i<=fText.length;i++){
+            fText[i].y-=10;
+            drawBlock(fText[i-1]);
+        }
         if (text[0].y>560){
             console.log("GAMEOVER");
             clearInterval(interval);
+        }
+        if (fText[0].y<-48){
+            fText.shift();
         }
         console.log(enInput.text);
     }
