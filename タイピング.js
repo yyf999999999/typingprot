@@ -166,7 +166,7 @@ function input(e){
                 }
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
-                    if (enInput.length>0) printCharacter=back.printCharacter;ans=back.ans;
+                    //if (enInput.length>0) printCharacter=back.printCharacter;ans=back.ans;
                     //console.log(back);
                 }
             }
