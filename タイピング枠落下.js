@@ -28,7 +28,7 @@ var text=[],fText=[],count=0,letter,i,interval;
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
             ctx.fillText(enInput.text,tX,letter.y);
             ctx.strokeStyle="#FF0000";
-            console.log(letter.enC,typeof(letter.enC));
+            //console.log(letter.enC,typeof(letter.enC));
             enAnswer.text=letter.enC;
         }else{
             ctx.strokeStyle="#000000";
@@ -67,11 +67,11 @@ var text=[],fText=[],count=0,letter,i,interval;
             fText[i].y-=10;
             drawBlock(fText[i-1]);
         }
-        if (text[0].y>560){
+        if (text.length>0) if (text[0].y>560){
             console.log("GAMEOVER");
             clearInterval(interval);
         }
-        if (fText[0].y<-48){
+        if (fText.length>0) if (fText[0].y<-48){
             fText.shift();
         }
         console.log(enInput.text);
