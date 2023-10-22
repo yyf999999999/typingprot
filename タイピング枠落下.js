@@ -73,7 +73,7 @@ var text=[],fText=[],count=0,letter,i,interval;
         }
         if (fText.length>0)/* if (fText[0].y<-48)*/{
             //fText.shift();
-            console.log(fText);
+            console.log(fText[0].y);
         }
         console.log(enInput.text);
     }
