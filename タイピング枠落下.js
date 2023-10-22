@@ -64,15 +64,16 @@ var text=[],fText=[],count=0,letter,i,interval;
             drawBlock(text[i]);
         }
         for (i=1;i<=fText.length;i++){
-            fText[i].y-=10;
+            fText[i-1].y-=10;
             drawBlock(fText[i-1]);
         }
         if (text.length>0) if (text[0].y>560){
             console.log("GAMEOVER");
             clearInterval(interval);
         }
-        if (fText.length>0) if (fText[0].y<-48){
-            fText.shift();
+        if (fText.length>0)/* if (fText[0].y<-48)*/{
+            //fText.shift();
+            console.log(fText);
         }
         console.log(enInput.text);
     }

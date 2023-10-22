@@ -167,7 +167,7 @@ function input(e){
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
                     if (enInput.length>0) printCharacter=back.printCharacter;ans=back.ans;
-                    console.log(back.printCharacter,"|",back.ans);
+                    console.log(printCharacter,"|",ans.join(""));
                 }
             }
         }else{
