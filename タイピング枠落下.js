@@ -71,10 +71,8 @@ var text=[],fText=[],count=0,letter,i,interval;
             console.log("GAMEOVER");
             clearInterval(interval);
         }
-        if (fText.length>0)/* if (fText[0].y<-48)*/{
-            //fText.shift();
-            console.log(fText[0].y)
-            console.log(fText[0]);
+        if (fText.length>0) if (fText[0].y<-48){
+            fText.shift();
         }
         //console.log(enInput.text);
     }
