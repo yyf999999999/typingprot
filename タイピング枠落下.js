@@ -4,13 +4,11 @@ const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 const subCanvas=document.getElementById("subCanvas");
 const subCtx=subCanvas.getContext("2d");
-subCtx.beginPath();
 subCtx.fillStyle="#000000";
 subCtx.font="24px Arial";
-subCtx.fillText(0,0,"60点ライン");
+subCtx.fillText("60点ライン",0,0);
 subCtx.fillStyle="#FF0000";
-subCtx.fillText(0,512,"0点ライン");
-subCtx.closePath();
+subCtx.fillText("0点ライン",512,0);
 /*console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
 console.log(enAnswer);*/
