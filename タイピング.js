@@ -173,10 +173,10 @@ function input(e){
         }else{
             enInput.text=enInput.text.slice(0,-1);
         }
-        console.log(printCharacter,"|",ans.join(""));
+        //console.log(printCharacter,"|",ans.join(""));
         back.ans=JSON.parse(JSON.stringify(ans));back.printCharacter=printCharacter;
         enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
-        console.log(printCharacter,"|",ans.join(""));
+        //console.log(printCharacter,"|",ans.join(""));
     }
 }
 enAnswer.text="値変えまーすwww";
