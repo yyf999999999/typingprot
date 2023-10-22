@@ -2,9 +2,18 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-console.log(enAnswer,typeof(enAnswer));
+const subCanvas=document.getElementById("subCanvas");
+const subCtx=subCanvas.getContext("2d");
+subCtx.beginPath();
+subCtx.fillStyle="#000000";
+subCtx.font="24px Arial";
+subCtx.fillText(0,0,"60点ライン");
+subCtx.fillStyle="#FF0000";
+subCtx.fillText(0,512,"0点ライン");
+subCtx.closePath();
+/*console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
-console.log(enAnswer);
+console.log(enAnswer);*/
 var text=[],fText=[],count=0,letter,i,interval;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
