@@ -40,7 +40,7 @@ var text=[],count=0,letter,i;
     function main(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         count++;
-        if (count%150==0){
+        if (count%200==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
@@ -62,6 +62,12 @@ var text=[],count=0,letter,i;
             text[i].y+=0.25;
             console.log(text[i]);
             drawBlock(text[i]);
+        }
+        if (text[0].y>536){
+            console.log("GAMEOVER");
+            while (True){
+
+            }
         }
         console.log(enInput.text);
     }
