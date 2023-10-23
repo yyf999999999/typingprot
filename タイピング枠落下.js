@@ -3,7 +3,7 @@ import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 var text=[],fText=[],count=0,letter,i,interval,countInterval,dropSpeed;
-countInterval=250;dropSpeed=0.25;
+countInterval=250;dropSpeed=0.5;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
             letter.en=enWrite.text;
