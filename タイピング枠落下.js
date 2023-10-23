@@ -59,7 +59,7 @@ var text=[],fText=[],count=0,letter,i,interval;
                 fText.push(text[0]);
                 text.shift();
                 enInput.text="";enWrite.text="";
-                back.ans="";back.printCharacter="";
+                //back.ans="";back.printCharacter="";
                 text[0].en=text[0].enC;
             }
         }

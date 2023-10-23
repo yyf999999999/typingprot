@@ -163,9 +163,9 @@ function input(e){
                 }
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
-                    console.log("前:"+printCharacter+","+ans);
+                    console.log("前:"+printCharacter+","+ans,enAnswer);
                     if (enInput.length>0) printCharacter=back.printCharacter;ans=back.ans;
-                    console.log("後:"+printCharacter+","+ans);
+                    console.log("後:"+printCharacter+","+ans,enAnswer);
                 }
             }
         }else{
@@ -174,6 +174,7 @@ function input(e){
         //console.log(printCharacter,"|",ans.join(""));
         back.ans=JSON.parse(JSON.stringify(ans));back.printCharacter=printCharacter;
         enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
+        //if (!tfC) console.log("enWrite:"+enWrite)
         //console.log(printCharacter,"|",ans.join(""));
     }
 }
