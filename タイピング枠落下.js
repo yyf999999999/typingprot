@@ -2,19 +2,11 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-/*subCtx.fillStyle="#000000";
-subCtx.font="12px Arial";
-subCtx.fillText("60点ライン",0,12);
-subCtx.fillStyle="#FF0000";
-subCtx.fillText("0点ライン",0,512);*/
 ctx.fillStyle="#000000";
 ctx.font="12px Arial";
 ctx.fillText("60点ライン",0,12);
 ctx.fillStyle="#FF0000";
 ctx.fillText("0点ライン",0,512);
-/*console.log(enAnswer,typeof(enAnswer));
-enAnswer.text="なんでや!";
-console.log(enAnswer);*/
 var text=[],fText=[],count=0,letter,i,interval;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
@@ -57,7 +49,7 @@ var text=[],fText=[],count=0,letter,i,interval;
         if (count%250==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+73;
+                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
                 console.log(textWarehouse[number].jn);
             }else{
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12))+9;
