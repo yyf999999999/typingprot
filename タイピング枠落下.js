@@ -2,8 +2,8 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-var text=[],fText=[],count=0,letter,i,interval,countInterval;
-countInterval=250;
+var text=[],fText=[],count=0,letter,i,interval,countInterval,dropSpeed;
+countInterval=250;dropSpeed=0.25;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
             letter.en=enWrite.text;
@@ -83,8 +83,9 @@ countInterval=250;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
+        if (count==4000) countInterval/=2;
         if (4750>count&&count>=4500){
-            if (count==4500) countInterval/=2;
+            if (count==4500) dropSpeed*=2;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
