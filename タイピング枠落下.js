@@ -6,9 +6,9 @@ const subCanvas=document.getElementById("subCanvas");
 const subCtx=subCanvas.getContext("2d");
 subCtx.fillStyle="#000000";
 subCtx.font="24px Arial";
-subCtx.fillText("60点ライン",0,0);
+subCtx.fillText("60点ライン",0,24);
 subCtx.fillStyle="#FF0000";
-subCtx.fillText("0点ライン",512,0);
+subCtx.fillText("0点ライン",0,512);
 /*console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
 console.log(enAnswer);*/
