@@ -79,6 +79,10 @@ var text=[],fText=[],count=0,letter,i,interval;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
+        if (count>=6000){
+            console.log("GAMECLEAR");
+            clearInterval(interval);
+        }
         //console.log(enInput.text);
     }
 interval=setInterval(main,10);
