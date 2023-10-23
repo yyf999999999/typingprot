@@ -40,7 +40,7 @@ var text=[],fText=[],count=0,letter,i,interval;
         ctx.fillStyle="#000000";
         ctx.font="24px Arial";
         ctx.fillText("60点ライン",2,24);
-        ctx.fillText("残り時間:"+Math.ceil(60-count/10)+"秒",612,24);
+        ctx.fillText("残り時間:"+Math.ceil(60-count/100)+"秒",612,24);
         ctx.fillStyle="#FF0000";
         ctx.fillText("0点ライン",2,510);
         
