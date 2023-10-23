@@ -74,6 +74,9 @@ var text=[],fText=[],count=0,letter,i,interval;
         }
         if (text.length>0) if (text[0].y>512){
             console.log("GAMEOVER");
+            ctx.font="36px Arial";
+            ctx.fillStyle="#000000";
+            ctx.fillText("GAMEOVER",(canvas.width-288)/2);
             clearInterval(interval);
         }
         if (fText.length>0) if (fText[0].y<-39){
