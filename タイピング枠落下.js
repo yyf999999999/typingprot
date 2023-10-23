@@ -37,14 +37,14 @@ var text=[],fText=[],count=0,letter,i,interval;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.beginPath();
         ctx.fillStyle="#000000";
-        ctx.font="12px Arial";
-        ctx.fillText("60点ライン",0,12);
+        ctx.font="36px Arial";
+        ctx.fillText("60点ライン",0,36);
         ctx.fillStyle="#FF0000";
         ctx.fillText("0点ライン",0,512);
-        ctx.moveTo(0,512);ctx.lineTo(canvas.width,512);
+        /*ctx.moveTo(0,512);ctx.lineTo(canvas.width,512);
         ctx.strokeStyle="#FF0000";
         ctx.stroke();
-        ctx.closePath();
+        ctx.closePath();*/
         count++;
         if (count%250==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
