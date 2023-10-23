@@ -2,8 +2,6 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-const subCanvas=document.getElementById("subCanvas");
-const subCtx=subCanvas.getContext("2d");
 /*subCtx.fillStyle="#000000";
 subCtx.font="12px Arial";
 subCtx.fillText("60点ライン",0,12);
