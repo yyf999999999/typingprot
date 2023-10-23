@@ -134,7 +134,6 @@ function input(e){
                     if (tfI&&!tfC){
                         if (ans[0]=="っ"){
                             if (inp.length!=0&&character2!=undefined){
-                                console.log(jn.includes(ans[1]+ans[2]),ans[1]+ans[2]);
                                 if (ans.length>2){
                                     if (jn.includes(ans[1]+ans[2])){
                                         character3=en[jn.indexOf(ans[1]+ans[2])];
@@ -154,9 +153,7 @@ function input(e){
                             }else{
                                 ans[0]=jnToEn(ans[1])[0];
                                 ans.unshift("");
-                            }
-                            console.log(ans,ans.join(""));
-                            
+                            }                            
                         }else{
                             printCharacter+=character.join("");
                         }
@@ -166,8 +163,9 @@ function input(e){
                 }
                 if (!tfC){
                     enInput.text=enInput.text.slice(0,-1);
+                    console.log("前:"+printCharacter+","+ans);
                     if (enInput.length>0) printCharacter=back.printCharacter;ans=back.ans;
-                    
+                    console.log("後:"+printCharacter+","+ans);
                 }
             }
         }else{
