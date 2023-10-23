@@ -48,7 +48,7 @@ var text=[],fText=[],count=0,letter,i,interval;
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
-                console.log(textWarehouse[number].jn);
+                //console.log(textWarehouse[number].jn);
             }else{
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12))+9;
             }
@@ -79,11 +79,13 @@ var text=[],fText=[],count=0,letter,i,interval;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
+        if (count==5000){
+            console.log("試験期間");
+        }
         if (count>=6000){
             console.log("GAMECLEAR");
             clearInterval(interval);
         }
-        //console.log(enInput.text);
     }
 interval=setInterval(main,10);
 interval;
