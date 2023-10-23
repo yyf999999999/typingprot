@@ -82,7 +82,7 @@ var text=[],fText=[],count=0,letter,i,interval;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
-        if (5100>count&&count>5000){
+        if (4750>count&&count>4500){
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
