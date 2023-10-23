@@ -39,12 +39,9 @@ var text=[],fText=[],count=0,letter,i,interval;
         ctx.fillStyle="#000000";
         ctx.font="24px Arial";
         ctx.fillText("60点ライン",2,24);
+        ctx.fillText("残り時間:"+Math.ceil(60-count/10)+"秒",612,24);
         ctx.fillStyle="#FF0000";
         ctx.fillText("0点ライン",2,510);
-        /*ctx.moveTo(0,512);ctx.lineTo(canvas.width,512);
-        ctx.strokeStyle="#FF0000";
-        ctx.stroke();
-        ctx.closePath();*/
         count++;
         if (count%250==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
