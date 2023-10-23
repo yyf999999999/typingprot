@@ -5,8 +5,8 @@ const ctx=canvas.getContext("2d");
 const subCanvas=document.getElementById("subCanvas");
 const subCtx=subCanvas.getContext("2d");
 subCtx.fillStyle="#000000";
-subCtx.font="24px Arial";
-subCtx.fillText("60点ライン",0,24);
+subCtx.font="12px Arial";
+subCtx.fillText("60点ライン",0,12);
 subCtx.fillStyle="#FF0000";
 subCtx.fillText("0点ライン",0,512);
 /*console.log(enAnswer,typeof(enAnswer));
@@ -45,6 +45,11 @@ var text=[],fText=[],count=0,letter,i,interval;
     }
     function main(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.beginPath();
+        ctx.moveTo(0,512);ctx.lineTo(768,512);
+        ctx.strokeStyle="#FF0000";
+        ctx.stroke();
+        ctx.closePath();
         count++;
         if (count%250==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
