@@ -87,6 +87,9 @@ var text=[],fText=[],count=0,letter,i,interval;
         }
         if (count>=6000){
             console.log("GAMECLEAR");
+            ctx.font="36px Arial";
+            ctx.fillStyle="#000000";
+            ctx.fillText("GAMEOVER",(canvas.width-249)/2,(canvas.height-36)/2);
             clearInterval(interval);
         }
     }
