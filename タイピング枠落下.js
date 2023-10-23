@@ -4,11 +4,16 @@ const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 const subCanvas=document.getElementById("subCanvas");
 const subCtx=subCanvas.getContext("2d");
-subCtx.fillStyle="#000000";
+/*subCtx.fillStyle="#000000";
 subCtx.font="12px Arial";
 subCtx.fillText("60点ライン",0,12);
 subCtx.fillStyle="#FF0000";
-subCtx.fillText("0点ライン",0,512);
+subCtx.fillText("0点ライン",0,512);*/
+ctx.fillStyle="#000000";
+ctx.font="12px Arial";
+ctx.fillText("60点ライン",0,12);
+ctx.fillStyle="#FF0000";
+ctx.fillText("0点ライン",0,512);
 /*console.log(enAnswer,typeof(enAnswer));
 enAnswer.text="なんでや!";
 console.log(enAnswer);*/
@@ -46,7 +51,7 @@ var text=[],fText=[],count=0,letter,i,interval;
     function main(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.beginPath();
-        ctx.moveTo(0,512);ctx.lineTo(768,512);
+        ctx.moveTo(0,512);ctx.lineTo(canvas.width,512);
         ctx.strokeStyle="#FF0000";
         ctx.stroke();
         ctx.closePath();
@@ -54,7 +59,7 @@ var text=[],fText=[],count=0,letter,i,interval;
         if (count%250==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
+                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+73;
                 console.log(textWarehouse[number].jn);
             }else{
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12))+9;
@@ -79,7 +84,7 @@ var text=[],fText=[],count=0,letter,i,interval;
             fText[i-1].y-=10;
             drawBlock(fText[i-1]);
         }
-        if (text.length>0) if (text[0].y>560){
+        if (text.length>0) if (text[0].y>512){
             console.log("GAMEOVER");
             clearInterval(interval);
         }
