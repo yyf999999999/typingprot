@@ -2,11 +2,6 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-ctx.fillStyle="#000000";
-ctx.font="12px Arial";
-ctx.fillText("60点ライン",0,12);
-ctx.fillStyle="#FF0000";
-ctx.fillText("0点ライン",0,512);
 var text=[],fText=[],count=0,letter,i,interval;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
@@ -41,6 +36,11 @@ var text=[],fText=[],count=0,letter,i,interval;
     function main(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.beginPath();
+        ctx.fillStyle="#000000";
+        ctx.font="12px Arial";
+        ctx.fillText("60点ライン",0,12);
+        ctx.fillStyle="#FF0000";
+        ctx.fillText("0点ライン",0,512);
         ctx.moveTo(0,512);ctx.lineTo(canvas.width,512);
         ctx.strokeStyle="#FF0000";
         ctx.stroke();
