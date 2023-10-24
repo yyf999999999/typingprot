@@ -62,7 +62,7 @@ countInterval=250;dropSpeed=0.5;numberSubject=7000/countInterval;
                 text.shift();
                 enInput.text="";enWrite.text="";
                 //back.ans="";back.printCharacter="";
-                text[0].en=text[0].enC;
+                if (text.length>0) text[0].en=text[0].enC;
             }
         }
         for (i=0;i<text.length;i++){
@@ -90,7 +90,7 @@ countInterval=250;dropSpeed=0.5;numberSubject=7000/countInterval;
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
         }
-        if (numberSubject<=0&&text==[]){
+        if (numberSubject<=0&&text.length>0){
             console.log("GAMECLEAR");
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
