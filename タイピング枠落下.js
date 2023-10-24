@@ -4,7 +4,7 @@ const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000;
-countInterval=250;
+countInterval=300;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
             letter.en=enWrite.text;
