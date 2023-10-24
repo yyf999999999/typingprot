@@ -35,8 +35,8 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
         ["xka","lka"],["xke","lke"],["-"],[","],["."],["/"]],
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
-    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:""},typeNumber={part:0,standard:200,all:0}
-    enWrite={text:""},back={printCharacter:"",ans:""},i,j,n;
+    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:""},
+    typeNumber={part:0,standard:200,all:0},enWrite={text:""},back={printCharacter:"",ans:""},i,j,n;
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
