@@ -96,6 +96,7 @@ countInterval=250;
             ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
         }else if (1250>count-examCount&&count-examCount>=1000){
             if (examContinue.ing&&!examContinue.ed){
+                if (count-examCount==1000)console.log(typeNumber.part);
                 if (count-examCount==1000) controlCount=1000;
                 if (count-examCount==1249){
                     controlCount=0;
