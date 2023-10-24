@@ -85,12 +85,13 @@ countInterval=250;
         }
         if (typeNumber.part>typeNumber.standard) if(count-examCount>2000) examCount=count;
         if (typeNumber.part>typeNumber.standard/2) if(count-examCount<2000) examContinue.ing=true;
-        if (count-examCount<250){
+        if (count-examCount<250&&!examContinue.ing){
             if (count==examCount) countInterval/=2;typeNumber.part=0;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
         }else if (1250>count-examCount&&count-examCount>=1000){
+            console.log("再試判定");
             if (examContinue.ing&&!examContinue.ed){
                 if (count-examCount==1000) count-=1000;
                 if (count-examCount==1249) examContinue.ed=true;
