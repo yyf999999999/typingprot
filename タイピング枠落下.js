@@ -101,9 +101,10 @@ countInterval=250;
             if (examContinue.ing&&!examContinue.ed){
                 if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
                 if (count-examCount==reExamCount) controlCount=reExamCount;
+                console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
                 if (count-examCount==reExamCount+249){
                     controlCount=0;
-                    count-=reExamCount-249;
+                    count-=reExamCount;
                     examContinue.ed=true;
                     reExamCount=1000;
                 }
