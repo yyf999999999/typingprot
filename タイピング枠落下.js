@@ -85,7 +85,7 @@ countInterval=250;dropSpeed=0.5;numberSubject=7000/countInterval;
             fText.shift();
         }
         if (5250>count&&count>=5000){
-            if (count==4500) countInterval/=2;
+            if (count==5000) countInterval/=2;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
