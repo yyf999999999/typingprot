@@ -35,7 +35,7 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
         ["xka","lka"],["xke","lke"],["-"],[","],["."],["/"]],
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
-    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:"定義可能のはずやのに..."},
+    jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:""},typeNumber={part:0,standard:200,all:0}
     enWrite={text:""},back={printCharacter:"",ans:""},i,j,n;
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
@@ -161,7 +161,9 @@ function input(e){
                     }
                     tfC=tfC||tfI;
                 }
-                if (!tfC){
+                if (tfC){
+                    typeNumber.part++;typeNumber.all++;
+                }else{
                     enInput.text=enInput.text.slice(0,-1);
                     if (enInput.text.length>0) printCharacter=back.printCharacter;ans=back.ans;
                 }
@@ -178,4 +180,4 @@ function input(e){
 }
 enAnswer.text="値変えまーすwww";
 document.addEventListener("keypress",input,false);
-export {enToJn,enInput,enAnswer,enWrite,back};
+export {enToJn,enInput,enAnswer,enWrite,back,typeNumber};
