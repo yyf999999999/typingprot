@@ -3,7 +3,7 @@ import {enToJn,enInput,enAnswer,enWrite,back,typeNumber} from "./タイピング
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
-    count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval;
+    count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000;
 countInterval=250;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
@@ -83,7 +83,10 @@ countInterval=250;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
-        if (typeNumber.part>typeNumber.standard/2&&count-examCount<1250) examContinue.ing=true;
+        if (typeNumber.part>typeNumber.standard/2&&count-examCount<1250){
+            examContinue.ing=true;
+            reExamCount=count-examCount;
+        }
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
         console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
         if (count-examCount<250&&!examContinue.ing){
@@ -94,14 +97,15 @@ countInterval=250;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
-        }else if (1250>count-examCount&&count-examCount>=1000){
+        }else if (1250>count-examCount&&count-examCount>=reExamCount){
             if (examContinue.ing&&!examContinue.ed){
-                if (count-examCount==1000) console.log("突入時タイプ数"+typeNumber.part);
-                if (count-examCount==1000) controlCount=1000;
-                if (count-examCount==1249){
+                if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
+                if (count-examCount==reExamCount) controlCount=reExamCount;
+                if (count-examCount==reExamCount+249){
                     controlCount=0;
-                    count-=751;
+                    count-=reExamCount-249;
                     examContinue.ed=true;
+                    reExamCount=1000;
                 }
                 ctx.font="36px Arial";
                 ctx.fillStyle="#000000";
