@@ -83,7 +83,7 @@ countInterval=250;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
-        if (typeNumber.part>typeNumber.standard/2.5&&count-examCount<2000) examContinue.ing=true;
+        if (typeNumber.part>typeNumber.standard/2.5&&count-examCount<1250) examContinue.ing=true;
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
         console.log(examContinue,typeNumber.part,examCount);
         if (count-examCount<250&&!examContinue.ing){
