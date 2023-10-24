@@ -85,7 +85,7 @@ countInterval=250;
         }
         if (typeNumber.part>typeNumber.standard/2&&count-examCount<1250) examContinue.ing=true;
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
-        console.log(examContinue,typeNumber.part,examCount,count-examCount);
+        console.log(examContinue,typeNumber.part,examCount);
         if (count-examCount<250&&!examContinue.ing){
             if (count==examCount){
                 countInterval/=2;
