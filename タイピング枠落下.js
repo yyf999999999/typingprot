@@ -84,8 +84,8 @@ countInterval=250;
             fText.shift();
         }
         if (typeNumber.part>typeNumber.standard/2&&count-examCount<1250){
+            if (!examContinue.ing)reExamCount=count-examCount;
             examContinue.ing=true;
-            reExamCount=count-examCount;
         }
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
         console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
