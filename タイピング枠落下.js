@@ -87,8 +87,8 @@ countInterval=250;
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
         console.log(examContinue,typeNumber.part,examCount);
         if (count-examCount<250&&!examContinue.ing){
-            console.log("試験期間突入");
             if (count==examCount) countInterval/=2;typeNumber.part=0;
+            console.log("試験期間突入",count==examCount,count,examCOunt);
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
