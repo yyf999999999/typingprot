@@ -83,9 +83,9 @@ countInterval=250;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
-        if (typeNumber.part>typeNumber.standard/5&&count-examCount<2000) examContinue.ing=true;
+        if (typeNumber.part>typeNumber.standard/2.5&&count-examCount<2000) examContinue.ing=true;
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
-        console.log(examContinue,typeNumber.part)
+        console.log(examContinue,typeNumber.part,examCount);
         if (count-examCount<250&&!examContinue.ing){
             console.log("試験期間突入");
             if (count==examCount) countInterval/=2;typeNumber.part=0;
