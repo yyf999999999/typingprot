@@ -84,7 +84,7 @@ countInterval=250;dropSpeed=0.5;numberSubject=7000/countInterval;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
-        if (4750>count&&count>=4500){
+        if (5250>count&&count>=5000){
             if (count==4500) countInterval/=2;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
