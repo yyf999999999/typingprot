@@ -119,7 +119,7 @@ countInterval=250;
                 ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
             }
         }
-        if (count>=6000){
+        if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
