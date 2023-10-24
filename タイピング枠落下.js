@@ -98,7 +98,7 @@ countInterval=250;
         }else if (1250>count-examCount&&count-examCount>=1000){
             console.log("再試判定");
             if (examContinue.ing&&!examContinue.ed){
-                controlCount=1000;
+                if (count-examCount==1000) controlCount=1000;
                 if (count-examCount==1249){
                     controlCount=0;
                     count-=751;
