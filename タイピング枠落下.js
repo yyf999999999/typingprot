@@ -2,7 +2,7 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back,typeNumber} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-var text=[],fText=[],count=0,examCount=-250,letter,i,interval,countInterval,dropSpeed;
+var text=[],fText=[],count=0,examCount=-500,letter,i,interval,countInterval,dropSpeed;
 countInterval=250;dropSpeed=0.5;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
@@ -90,8 +90,8 @@ countInterval=250;dropSpeed=0.5;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
-        }else if (500>count-examCount&&count-examCount>=250){
-            if (count-examCount==250) countInterval*=2;
+        }else if (1250>count-examCount&&count-examCount>=1000){
+            if (count-examCount==1000) countInterval*=2;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
