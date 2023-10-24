@@ -2,8 +2,8 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back,typeNumber} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
-var text=[],fText=[],count=0,examCount=-1250,letter,i,interval,countInterval,dropSpeed;
-countInterval=250;dropSpeed=0.5;
+var text=[],fText=[],count=0,examCount=-1250,letter,i,interval,countInterval,examContinue={ing:false,ed:false};
+countInterval=250;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
             letter.en=enWrite.text;
@@ -83,18 +83,30 @@ countInterval=250;dropSpeed=0.5;
         if (fText.length>0) if (fText[0].y<-39){
             fText.shift();
         }
-        if (typeNumber.part>typeNumber.standard) examCount=count;
-        if (typeNumber.part>typeNumber.standard||count-examCount<250){
-            typeNumber.part=0;
-            if (count==examCount) countInterval/=2;
+        if (typeNumber.part>typeNumber.standard) if(count-examCount>2000){
+            examCount=count;
+        }else{
+            examContinue.ing=true;
+        }
+        if (count-examCount<250){
+            if (count==examCount) countInterval/=2;typeNumber.part=0;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間",(canvas.width-144)/2,(canvas.height-36)/2);
         }else if (1250>count-examCount&&count-examCount>=1000){
-            if (count-examCount==1000) countInterval*=2;
-            ctx.font="36px Arial";
-            ctx.fillStyle="#000000";
-            ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+            if (examContinue.ing&&!examContinue.ed){
+                if (count-examCount==1000) count-=1000;
+                if (count-examCount==1249) examContinue.ed=true;
+                ctx.font="36px Arial";
+                ctx.fillStyle="#000000";
+                ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
+            }else{
+                if (count-examCount==1000) countInterval*=2;typeNumber.part=0;
+                examContinue={ing:false,ed:false}
+                ctx.font="36px Arial";
+                ctx.fillStyle="#000000";
+                ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+            }
         }
         if (count>=6000){
             console.log("GAMECLEAR");
