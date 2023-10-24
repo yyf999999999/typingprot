@@ -95,7 +95,7 @@ countInterval=250;
         }else if (1250>count-examCount&&count-examCount>=1000){
             console.log("再試判定");
             if (examContinue.ing&&!examContinue.ed){
-                if (count-examCount==1000) count-=1000;
+                if (count-examCount==1249) count-=751;
                 if (count-examCount==1249) examContinue.ed=true;
                 ctx.font="36px Arial";
                 ctx.fillStyle="#000000";
