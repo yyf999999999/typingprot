@@ -162,6 +162,7 @@ function input(e){
                 }
                 if (tfC){
                     typeNumber.part++;typeNumber.all++;
+                    console.log(typeNumber.part);
                 }else{
                     enInput.text=enInput.text.slice(0,-1);
                     if (enInput.text.length>0) printCharacter=back.printCharacter;ans=back.ans;
