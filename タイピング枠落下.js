@@ -85,6 +85,7 @@ countInterval=250;
         }
         if (typeNumber.part>typeNumber.standard) if(count-examCount>2000) examCount=count;
         if (typeNumber.part>typeNumber.standard/2) if(count-examCount<2000) examContinue.ing=true;
+        console.log(examContinue,typeNumber.part)
         if (count-examCount<250&&!examContinue.ing){
             console.log("試験期間突入");
             if (count==examCount) countInterval/=2;typeNumber.part=0;
