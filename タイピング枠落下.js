@@ -85,7 +85,7 @@ countInterval=250;
         }
         if (typeNumber.part>typeNumber.standard/2&&count-examCount<1250) examContinue.ing=true;
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
-        console.log(examContinue,typeNumber.part,examCount);
+        console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
         if (count-examCount<250&&!examContinue.ing){
             if (count==examCount){
                 countInterval/=2;
@@ -96,7 +96,7 @@ countInterval=250;
             ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
         }else if (1250>count-examCount&&count-examCount>=1000){
             if (examContinue.ing&&!examContinue.ed){
-                if (count-examCount==1000)console.log(typeNumber.part);
+                if (count-examCount==1000) console.log("突入時タイプ数"+typeNumber.part);
                 if (count-examCount==1000) controlCount=1000;
                 if (count-examCount==1249){
                     controlCount=0;
