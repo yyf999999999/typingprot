@@ -97,11 +97,11 @@ countInterval=250;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
-        }else if (1250>count-examCount&&count-examCount>=reExamCount){
+        }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
             if (examContinue.ing&&!examContinue.ed){
                 if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
                 if (count-examCount==reExamCount) controlCount=reExamCount;
-                if (count-examCount==reExamCount){
+                if (count-examCount==reExamCount+249){
                     controlCount=0;
                     count-=reExamCount-249;
                     examContinue.ed=true;
