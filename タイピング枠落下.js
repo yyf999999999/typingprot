@@ -89,34 +89,36 @@ countInterval=300;
         }
         if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
         console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
-        if (count-examCount<250&&!examContinue.ing){
-            if (count==examCount){
-                countInterval/=2;
-                typeNumber.part=0;
-            }
-            ctx.font="36px Arial";
-            ctx.fillStyle="#000000";
-            ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
-        }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
-            if (examContinue.ing&&!examContinue.ed){
-                if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
-                if (count-examCount==reExamCount) controlCount=reExamCount;
-                console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
-                if (count-examCount==reExamCount+249){
-                    controlCount=0;
-                    count-=reExamCount;
-                    examContinue.ed=true;
-                    reExamCount=1000;
+        if (Math.ceil(60-(count-controlCount)/100)>0){
+            if (count-examCount<250&&!examContinue.ing){
+                if (count==examCount){
+                    countInterval/=2;
+                    typeNumber.part=0;
                 }
                 ctx.font="36px Arial";
                 ctx.fillStyle="#000000";
-                ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
-            }else{
-                if (count-examCount==1000) countInterval*=2;typeNumber.part=0;
-                if (count-examCount==1249) examContinue={ing:false,ed:false};
-                ctx.font="36px Arial";
-                ctx.fillStyle="#000000";
-                ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+                ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
+            }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
+                if (examContinue.ing&&!examContinue.ed){
+                    if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
+                    if (count-examCount==reExamCount) controlCount=reExamCount;
+                    console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
+                    if (count-examCount==reExamCount+249){
+                        controlCount=0;
+                        count-=reExamCount;
+                        examContinue.ed=true;
+                        reExamCount=1000;
+                    }
+                    ctx.font="36px Arial";
+                    ctx.fillStyle="#000000";
+                    ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                }else{
+                    if (count-examCount==1000) countInterval*=2;typeNumber.part=0;
+                    if (count-examCount==1249) examContinue={ing:false,ed:false};
+                    ctx.font="36px Arial";
+                    ctx.fillStyle="#000000";
+                    ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+                }
             }
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
@@ -124,6 +126,8 @@ countInterval=300;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
+            ctx.font="24px Arial";
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-185)/2,(canvas.height-36)/2+30)
             clearInterval(interval);
         }
     }
