@@ -51,7 +51,7 @@ countInterval=300;
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
                 //console.log(textWarehouse[number].jn);
             }else{
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12-16))+9;
+                textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*13-16))+9;
             }
             text.push({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en,enC:textWarehouse[number].en});
         }
