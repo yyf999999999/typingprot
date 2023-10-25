@@ -27,12 +27,14 @@ countInterval=300;
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
             ctx.fillText(enInput.text,tX,letter.y);
             ctx.strokeStyle="#FF0000";
+            ctx.fillStyle="#000000";
             //console.log(letter.enC,typeof(letter.enC));
             enAnswer.text=letter.enC;
         }else{
             ctx.strokeStyle="#000000";
+            ctx.fillStyle="#000000";
         }
-        ctx.stroke();
+        ctx.stroke();ctx.fill();
         ctx.closePath();
     }
     function main(){
