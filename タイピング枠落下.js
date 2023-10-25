@@ -51,7 +51,7 @@ countInterval=300;
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
                 //console.log(textWarehouse[number].jn);
             }else{
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12))+9;
+                textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*12-16))+9;
             }
             text.push({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en,enC:textWarehouse[number].en});
         }
@@ -127,7 +127,7 @@ countInterval=300;
             ctx.fillStyle="#000000";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
             ctx.font="24px Arial";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-185)/2,(canvas.height-36)/2+30)
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-168)/2,(canvas.height-36)/2+30)
             clearInterval(interval);
         }
     }
