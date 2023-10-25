@@ -78,6 +78,8 @@ countInterval=300;
             ctx.font="36px Arial";
             ctx.fillStyle="#000000";
             ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
+            ctx.font="24px Arial";
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
         if (fText.length>0) if (fText[0].y<-39){
@@ -127,7 +129,7 @@ countInterval=300;
             ctx.fillStyle="#000000";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
             ctx.font="24px Arial";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-168)/2,(canvas.height-36)/2+30)
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
     }
