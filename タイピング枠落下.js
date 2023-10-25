@@ -27,12 +27,12 @@ countInterval=300;
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
             ctx.fillText(enInput.text,tX,letter.y);
             ctx.strokeStyle="#FF0000";
-            ctx.fillStyle="#000000";
+            ctx.fillStyle="#FFFFFF";
             //console.log(letter.enC,typeof(letter.enC));
             enAnswer.text=letter.enC;
         }else{
             ctx.strokeStyle="#000000";
-            ctx.fillStyle="#000000";
+            ctx.fillStyle="#FFFFFF";
         }
         ctx.stroke();ctx.fill();
         ctx.closePath();
@@ -66,7 +66,7 @@ countInterval=300;
                 if (text.length>0) text[0].en=text[0].enC;
             }
         }
-        for (i=0;i<text.length;i++){
+        for (i=text.length-1;i>=0;i++){
             text[i].y+=0.25;
             //console.log(text[i]);
             drawBlock(text[i]);
