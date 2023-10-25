@@ -34,7 +34,7 @@ countInterval=300;
             ctx.strokeStyle="#000000";
             ctx.fillStyle="#FFFFFF";
         }
-        ctx.stroke();ctx.fill();
+        ctx.fill();ctx.stroke();
         ctx.closePath();
     }
     function main(){
@@ -66,7 +66,8 @@ countInterval=300;
                 if (text.length>0) text[0].en=text[0].enC;
             }
         }
-        for (i=text.length-1;i>=0;i++){
+        for (i=0;i<text.length;i++){
+            console.log(text.length,text[text.length-1]);
             text[i].y+=0.25;
             //console.log(text[i]);
             drawBlock(text[i]);
