@@ -66,7 +66,7 @@ countInterval=300;
                 if (text.length>0) text[0].en=text[0].enC;
             }
         }
-        for (i=text.length-1;i>=0;i++){
+        for (i=text.length-1;i>=0;i--){
             //console.log(text.length,text[text.length-1]);
             text[i].y+=0.25;
             console.log(text[i]);
