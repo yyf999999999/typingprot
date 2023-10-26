@@ -78,11 +78,11 @@ countInterval=300;
         }
         if (text.length>0) if (text[0].y>512){
             console.log("GAMEOVER");
-            ctx.font="36px Arial";
+            ctx.font="bold 36px Arial";
             ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
             ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
             ctx.strokeText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
-            ctx.font="24px Arial";
+            ctx.font="bold 24px Arial";
             ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
@@ -102,7 +102,7 @@ countInterval=300;
                     countInterval/=2;
                     typeNumber.part=0;
                 }
-                ctx.font="36px Arial";
+                ctx.font="bold 36px Arial";
                 ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
                 ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
                 ctx.strokeText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
@@ -117,7 +117,7 @@ countInterval=300;
                         examContinue.ed=true;
                         reExamCount=1000;
                     }
-                    ctx.font="36px Arial";
+                    ctx.font="bold 36px Arial";
                     ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
                     ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
                     ctx.strokeText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
@@ -127,7 +127,7 @@ countInterval=300;
                         typeNumber.part=0;
                     } 
                     if (count-examCount==1249) examContinue={ing:false,ed:false};
-                    ctx.font="36px Arial";
+                    ctx.font="bold 36px Arial";
                     ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
                     ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
                     ctx.strokeText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
@@ -136,11 +136,11 @@ countInterval=300;
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
-            ctx.font="36px Arial";
+            ctx.font="bold 36px Arial";
             ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
             ctx.strokeText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
-            ctx.font="24px Arial";
+            ctx.font="bold 24px Arial";
             ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
