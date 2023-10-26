@@ -55,7 +55,7 @@ countInterval=300;
             }else{
                 textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*13-16))+9;
             }
-            text.push({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en,enC:textWarehouse[number].en});
+            text.unshift({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en,enC:textWarehouse[number].en});
         }
         if (text.length>0){
             if (enToJn(enInput.text)==enToJn(text[0].en)){
