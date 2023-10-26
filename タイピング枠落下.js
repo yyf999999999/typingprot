@@ -10,7 +10,6 @@ countInterval=300;
             letter.en=enWrite.text;
         }
         ctx.beginPath();
-        ctx.fillStyle="#000000";
         ctx.font="24px Arial";
         if (letter.en.length>letter.jn.length*2){
             ctx.rect(letter.x-16,letter.y-51,letter.en.length*12+32,57);
@@ -18,15 +17,11 @@ countInterval=300;
             ctx.rect(letter.x-8,letter.y-51,letter.jn.length*24+16,57);
         }
         ctx.lineWidth=1;
-        if (i==0){
-            ctx.strokeStyle="#FF0000";
-            ctx.fillStyle="#FFFFFF";
-            //console.log(letter.enC,typeof(letter.enC));
-        }else{
-            ctx.strokeStyle="#000000";
-            ctx.fillStyle="#FFFFFF";
-        }
-        ctx.fill();ctx.stroke();ctx.closePath();
+        if (i==0) ctx.strokeStyle="#FF0000";
+        else ctx.strokeStyle="#000000";  
+        ctx.fillStyle="#FFFFFF";
+        ctx.fill();ctx.stroke();
+        ctx.fillStyle="#000000";
         if (letter.en.length>letter.jn.length*2){
             ctx.fillText(letter.en,letter.x,letter.y);
             ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6,letter.y-24);
@@ -40,6 +35,7 @@ countInterval=300;
             ctx.fillText(enInput.text,tX,letter.y);
             enAnswer.text=letter.enC;
         }
+        ctx.closePath();
     }
     function main(){
         count++;
