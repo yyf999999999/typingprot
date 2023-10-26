@@ -26,7 +26,7 @@ countInterval=300;
             ctx.strokeStyle="#000000";
             ctx.fillStyle="#FFFFFF";
         }
-        ctx.fill();ctx.stroke();
+        ctx.fill();ctx.stroke();ctx.closePath();
         if (letter.en.length>letter.jn.length*2){
             ctx.fillText(letter.en,letter.x,letter.y);
             ctx.fillText(letter.jn,letter.x+(letter.en.length-letter.jn.length*2)*6,letter.y-24);
@@ -40,7 +40,6 @@ countInterval=300;
             ctx.fillText(enInput.text,tX,letter.y);
             enAnswer.text=letter.enC;
         }
-        ctx.closePath();
     }
     function main(){
         count++;
