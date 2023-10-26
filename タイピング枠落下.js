@@ -66,10 +66,10 @@ countInterval=300;
                 if (text.length>0) text[0].en=text[0].enC;
             }
         }
-        for (i=0;i<text.length;i++){
-            console.log(text.length,text[text.length-1]);
+        for (i=text.length-1;i>=0;i++){
+            //console.log(text.length,text[text.length-1]);
             text[i].y+=0.25;
-            //console.log(text[i]);
+            console.log(text[i]);
             drawBlock(text[i]);
         }
         for (i=1;i<=fText.length;i++){
@@ -86,7 +86,7 @@ countInterval=300;
             clearInterval(interval);
         }
         if (fText.length>0) if (fText[0].y<-39){
-            fText.shift();
+            fText.push();
         }
         if (typeNumber.part>typeNumber.standard/2&&count-examCount<1250){
             if (!examContinue.ing)reExamCount=count-examCount;
