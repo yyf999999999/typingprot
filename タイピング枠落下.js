@@ -118,7 +118,10 @@ countInterval=300;
                     ctx.fillStyle="#000000";
                     ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
                 }else{
-                    if (count-examCount==1000) countInterval*=2;typeNumber.part=0;
+                    if (count-examCount==1000){
+                        countInterval*=2;
+                        typeNumber.part=0;
+                    } 
                     if (count-examCount==1249) examContinue={ing:false,ed:false};
                     ctx.font="36px Arial";
                     ctx.fillStyle="#000000";
