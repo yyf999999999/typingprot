@@ -44,6 +44,8 @@ countInterval=300;
     function main(){
         count++;
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
+        timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
         /*ctx.beginPath();
         ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
         ctx.font="24px Arial";
