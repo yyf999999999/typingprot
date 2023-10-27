@@ -34,20 +34,28 @@ countInterval=300;
             ctx.fillText(letter.jn,letter.x,letter.y-24);
         }
         if (i==0){
-            ctx.fillStyle="FF0000";
+            ctx.fillStyle="FFFFFF";
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
             ctx.fillText(enInput.text,tX,letter.y);
             enAnswer.text=letter.enC;
         }
         ctx.closePath();
     }
+    function drawText(context,font,letter,x,y){
+        context.font="bold "+font;
+        context.fillStyle="#FFFFFF";
+        context.fillText(letter,x,y);
+        context.font=font;ctx.fillStyle="#000000";
+        context.fillText(letter,x,y);
+    }
     function main(){
         count++;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
         timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
-        lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
-        lineCtx.fillText("60点ライン",36,24);
+        //lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
+        //lineCtx.fillText("60点ライン",36,24);
+        drawText(lineCtx,"24px Arial","60点ライン",36,24);
         lineCtx.fillStyle="#FF0000";
         lineCtx.fillText("0点ライン",48,510);
         timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
