@@ -142,7 +142,7 @@ countInterval=300;
         if (text.length>0) if (text[0].y>512){
             console.log("GAMEOVER");
             drawText(ctx,"36px Arial","留年",(canvas.width-72)/2,(canvas.height-36)/2);
-            drawText(ctx,"24px Arial","SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            drawText(ctx,"24px Arial","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
             /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
             ctx.fillText("GAMEOVER",(canvas.width-218)/2,);
             ctx.font="36px Arial";ctx.fillStyle="#000000";
@@ -156,7 +156,9 @@ countInterval=300;
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
-            ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
+            drawText(ctx,"36px Arial","進学",(canvas.width-72)/2,(canvas.height-36)/2);
+            drawText(ctx,"24px Arial","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
+            /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
             ctx.font="36px Arial";ctx.fillStyle="#000000";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
@@ -164,7 +166,7 @@ countInterval=300;
             ctx.font="bold 24px Arial";ctx.fillStyle="#FFFFFF";
             ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             ctx.font="24px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);*/
             //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
