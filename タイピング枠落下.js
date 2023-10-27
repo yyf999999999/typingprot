@@ -2,6 +2,10 @@ import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back,typeNumber} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
+const lineCanvas=document.getElementById("lineCanvas");
+const lineCtx=lineCanvas.getContext("2d");
+const timeCanvas=document.getElementById("timeCanvas");
+const timeCtx=timeCanvas.getCOntext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000;
 countInterval=300;
@@ -40,13 +44,19 @@ countInterval=300;
     function main(){
         count++;
         ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.beginPath();
+        /*ctx.beginPath();
         ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
         ctx.font="24px Arial";
         ctx.fillText("60点ライン",2,24);
         ctx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",canvas.width-156,24);
         ctx.fillStyle="#FF0000";ctx.strokeStyle="#FFFFFF";
-        ctx.fillText("0点ライン",2,510);
+        ctx.fillText("0点ライン",2,510);*/
+        lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
+        lineCtx.fillText("60点ライン",2,24);
+        lineCtx.fillStyle="#FF0000";
+        lineCtx.fillText("0点ライン",2,510);
+        timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
+        timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24)
         if (count%countInterval==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
