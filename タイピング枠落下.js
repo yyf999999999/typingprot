@@ -76,19 +76,6 @@ countInterval=300;
             fText[i-1].y-=10;
             drawBlock(fText[i-1]);
         }
-        if (text.length>0) if (text[0].y>512){
-            console.log("GAMEOVER");
-            ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
-            ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
-            ctx.font="36px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
-            ctx.font="bold 24px Arial";ctx.fillStyle="#FFFFFF";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            ctx.font="24px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            clearInterval(interval);
-        }
         if (fText.length>0) if (fText[0].y<-39){
             fText.push();
         }
@@ -138,6 +125,19 @@ countInterval=300;
                     //ctx.strokeText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
                 }
             }
+        }
+        if (text.length>0) if (text[0].y>512){
+            console.log("GAMEOVER");
+            ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
+            ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
+            ctx.font="36px Arial";ctx.fillStyle="#000000";
+            ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
+            ctx.font="bold 24px Arial";ctx.fillStyle="#FFFFFF";
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            ctx.font="24px Arial";ctx.fillStyle="#000000";
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            clearInterval(interval);
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
