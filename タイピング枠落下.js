@@ -78,13 +78,18 @@ countInterval=300;
         }
         if (text.length>0) if (text[0].y>512){
             console.log("GAMEOVER");
-            ctx.font="bold 36px Arial";ctx.lineWidth=1;
-            ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
+            ctx.font="bold 36px Arial";
+            ctx.fillStyle="#000000";//ctx.strokeStyle="#FFFFFF";
             ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
-            ctx.strokeText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
-            ctx.font="bold 24px Arial";ctx.lineWidth=1;
+            ctx.fillStyle="#FFFFFF";//ctx.strokeStyle="#FFFFFF";
+            ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
+            //ctx.strokeText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
+            ctx.font="bold 24px Arial";
+            ctx.fillStyle="#000000";
             ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            ctx.fillStyle="#FFFFFF";
+            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
         if (fText.length>0) if (fText[0].y<-39){
@@ -102,10 +107,11 @@ countInterval=300;
                     countInterval/=2;
                     typeNumber.part=0;
                 }
-                ctx.font="bold 36px Arial";ctx.lineWidth=1;
-                ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
+                ctx.font="bold 36px Arial";
+                ctx.fillStyle="#000000";//ctx.strokeStyle="#FFFFFF";
                 ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
-                ctx.strokeText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                ctx.fillStyle="#FFFFFF";ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                //ctx.strokeText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
             }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
                 if (examContinue.ing&&!examContinue.ed){
                     if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
@@ -117,32 +123,38 @@ countInterval=300;
                         examContinue.ed=true;
                         reExamCount=1000;
                     }
-                    ctx.font="bold 36px Arial";ctx.lineWidth=1;
-                    ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
+                    ctx.font="bold 36px Arial";
+                    ctx.fillStyle="#000000";//ctx.strokeStyle="#FFFFFF";
                     ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
-                    ctx.strokeText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                    ctx.fillStyle="#FFFFFF";ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                    //ctx.strokeText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
                 }else{
                     if (count-examCount==1000){
                         countInterval*=2;
                         typeNumber.part=0;
                     } 
                     if (count-examCount==1249) examContinue={ing:false,ed:false};
-                    ctx.font="bold 36px Arial";ctx.lineWidth=1;
-                    ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
+                    ctx.font="bold 36px Arial";
+                    ctx.fillStyle="#000000";//ctx.strokeStyle="#FFFFFF";
                     ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
-                    ctx.strokeText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+                    ctx.fillStyle="#FFFFFF";ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+                    //ctx.strokeText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
                 }
             }
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
-            ctx.font="bold 36px Arial";ctx.lineWidth=1;
-            ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
+            ctx.font="bold 36px Arial";
+            ctx.fillStyle="#000000";//ctx.strokeStyle="#FFFFFF";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
-            ctx.strokeText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
-            ctx.font="bold 24px Arial";ctx.lineWidth=1;
+            ctx.fillStyle="#FFFFFF";ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
+            //ctx.strokeText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
+            ctx.font="bold 24px Arial";
+            ctx.fillStyle="#000000";
             ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            ctx.font="bold 24px Arial";
+            ctx.fillStyle="#FFFFFF";ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
+            //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
     }
