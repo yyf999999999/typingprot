@@ -54,18 +54,18 @@ countInterval=300;
         ctx.fillStyle="#FF0000";ctx.strokeStyle="#FFFFFF";
         ctx.fillText("0点ライン",2,510);*/
         lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
-        lineCtx.fillText("60点ライン",2,24);
+        lineCtx.fillText("60点ライン",34,24);
         lineCtx.fillStyle="#FF0000";
-        lineCtx.fillText("0点ライン",2,510);
+        lineCtx.fillText("0点ライン",58,510);
         timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
         timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24)
         if (count%countInterval==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].jn.length*24-16))+9;
+                textX=Math.floor(Math.random()*(canvas.width/1.2-textWarehouse[number].jn.length*24-16))+9;
                 //console.log(textWarehouse[number].jn);
             }else{
-                textX=Math.floor(Math.random()*(750-textWarehouse[number].en.length*13-16))+9;
+                textX=Math.floor(Math.random()*(canvas.width/1.2-textWarehouse[number].en.length*13-16))+9;
             }
             text.push({x:textX,y:0,jn:textWarehouse[number].jn,en:textWarehouse[number].en,enC:textWarehouse[number].en});
         }
