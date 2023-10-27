@@ -44,7 +44,7 @@ countInterval=300;
         ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
         ctx.font="24px Arial";
         ctx.fillText("60点ライン",2,24);
-        ctx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",612,24);
+        ctx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",canvas.width-156,24);
         ctx.fillStyle="#FF0000";ctx.strokeStyle="#FFFFFF";
         ctx.fillText("0点ライン",2,510);
         if (count%countInterval==0){
