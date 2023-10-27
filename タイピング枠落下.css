@@ -1,4 +1,4 @@
-canvas{
+#canvas{
     border-top : 1px solid #000000;
     border-right : 1px solid #000000;
     border-left : 1px solid #000000;
@@ -9,7 +9,7 @@ canvas{
     justify-content: center;
     margin-top : 32px;
 }
-#sixtyLine{
+/*#sixtyLine{
     margin-top : 32px;
 }
 #zeroLine{
@@ -17,4 +17,4 @@ canvas{
 }
 #time{
     margin-bottom : 32px;
-}
+}*/
