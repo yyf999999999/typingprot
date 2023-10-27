@@ -49,7 +49,7 @@ countInterval=300;
         lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
         lineCtx.fillText("60点ライン",36,24);
         lineCtx.fillStyle="#FF0000";
-        lineCtx.fillText("0点ライン",72,510);
+        lineCtx.fillText("0点ライン",48,510);
         timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
         timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24)
         if (count%countInterval==0){
