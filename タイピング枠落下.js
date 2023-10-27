@@ -46,24 +46,16 @@ countInterval=300;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
         timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
-        /*ctx.beginPath();
-        ctx.fillStyle="#000000";ctx.strokeStyle="#FFFFFF";
-        ctx.font="24px Arial";
-        ctx.fillText("60点ライン",2,24);
-        ctx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",canvas.width-156,24);
-        ctx.fillStyle="#FF0000";ctx.strokeStyle="#FFFFFF";
-        ctx.fillText("0点ライン",2,510);*/
         lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
-        lineCtx.fillText("60点ライン",34,24);
+        lineCtx.fillText("60点ライン",70,24);
         lineCtx.fillStyle="#FF0000";
-        lineCtx.fillText("0点ライン",58,510);
+        lineCtx.fillText("0点ライン",94,510);
         timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
         timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24)
         if (count%countInterval==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
                 textX=Math.floor(Math.random()*(canvas.width/1.25-textWarehouse[number].jn.length*24-25))+9;
-                //console.log(textWarehouse[number].jn);
             }else{
                 textX=Math.floor(Math.random()*(canvas.width/1.25-textWarehouse[number].en.length*13-25))+9;
             }
