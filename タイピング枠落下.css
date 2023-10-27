@@ -3,4 +3,6 @@ canvas{
     border-right : 1px solid #000000;
     border-left : 1px solid #000000;
     border-bottom : 1px solid #FF0000;
+    width : 100%;
+    text-align: center;
 }
