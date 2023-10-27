@@ -5,7 +5,7 @@ const ctx=canvas.getContext("2d");
 const lineCanvas=document.getElementById("lineCanvas");
 const lineCtx=lineCanvas.getContext("2d");
 const timeCanvas=document.getElementById("timeCanvas");
-const timeCtx=timeCanvas.getCOntext("2d");
+const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000;
 countInterval=300;
