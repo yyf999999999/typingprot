@@ -45,7 +45,8 @@ countInterval=300;
         context.font="bold "+font;
         context.fillStyle="#FFFFFF";
         context.fillText(letter,x,y);
-        context.font=font;ctx.fillStyle="#000000";
+        context.font=font;
+        context.fillStyle="#000000";
         context.fillText(letter,x,y);
     }
     function main(){
