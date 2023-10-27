@@ -34,7 +34,7 @@ countInterval=300;
             ctx.fillText(letter.jn,letter.x,letter.y-24);
         }
         if (i==0){
-            ctx.fillStyle="FFFFFF";
+            ctx.fillStyle="#FFFFFF";
             if (letter.en.length>letter.jn.length*2)var tX=letter.x; else var tX=letter.x+(letter.jn.length*2-letter.en.length)*6
             ctx.fillText(enInput.text,tX,letter.y);
             enAnswer.text=letter.enC;
