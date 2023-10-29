@@ -6,8 +6,6 @@ const lineCanvas=document.getElementById("lineCanvas");
 const lineCtx=lineCanvas.getContext("2d");
 const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
-const music=new Audio("./../sounds/高専祭 2-I-E/Book02-1(Flip).mp3");
-music.play();
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000;
 countInterval=300;
