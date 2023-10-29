@@ -1,4 +1,4 @@
-import textWarehouse from "./タイピング枠落下.json" assert{type:"json"};
+import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
 import {enToJn,enInput,enAnswer,enWrite,back,typeNumber} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
