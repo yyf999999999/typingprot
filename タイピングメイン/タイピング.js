@@ -162,7 +162,7 @@ function input(e){
                     tfC=tfC||tfI;
                 }
                 if (tfC){
-                    music.play();
+                    music.currentTime = 0;music.play();
                     typeNumber.part++;typeNumber.all++;
                     console.log(typeNumber.part);
                 }else{
