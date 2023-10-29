@@ -57,10 +57,12 @@ countInterval=300;
         //lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
         //lineCtx.fillText("60点ライン",36,24);
         drawText(lineCtx,"24px Arial","60点ライン",36,24);
-        lineCtx.fillStyle="#FF0000";
-        lineCtx.fillText("0点ライン",48,510);
-        timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
-        timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24)
+        //lineCtx.fillStyle="#FF0000";
+        //lineCtx.fillText("0点ライン",48,510);
+        drawText(lineCtx,"24px Arial","0点ライン",48,510);
+        //timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
+        //timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
+        drawText(timeCtx,"24px Arial","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
         if (count%countInterval==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
             if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
@@ -104,10 +106,11 @@ countInterval=300;
                     countInterval/=2;
                     typeNumber.part=0;
                 }
-                ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
+                drawText(ctx,"36px Arial","試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2)
+                /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
                 ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
                 ctx.font="36px Arial";ctx.fillStyle="#000000";
-                ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);*/
                 //ctx.strokeText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
             }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
                 if (examContinue.ing&&!examContinue.ed){
@@ -120,10 +123,11 @@ countInterval=300;
                         examContinue.ed=true;
                         reExamCount=1000;
                     }
-                    ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
+                    drawText(ctx,"36px Arial","再試突入",(canvas.width-216)/2,(canvas.height-36)/2)
+                    /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
                     ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
                     ctx.font="36px Arial";ctx.fillStyle="#000000";
-                    ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                    ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);*/
                     //ctx.strokeText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
                 }else{
                     if (count-examCount==1000){
@@ -131,10 +135,11 @@ countInterval=300;
                         typeNumber.part=0;
                     } 
                     if (count-examCount==1249) examContinue={ing:false,ed:false};
-                    ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
+                    drawText(ctx,"36px Arial","試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2)
+                    /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
                     ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
                     ctx.font="36px Arial";ctx.fillStyle="#000000";
-                    ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+                    ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);*/
                     //ctx.strokeText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
                 }
             }
