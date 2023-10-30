@@ -1,4 +1,5 @@
 .topDiv{
+    display : block;
     text-align : center;
 }
 h1{
@@ -8,5 +9,6 @@ h5{
     margin-top : 0px;
 }
 #rule{
+    display : inline-block;
     text-align : left;
 }
