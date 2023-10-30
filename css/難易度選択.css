@@ -4,6 +4,9 @@ div{
 h1{
     margin-bottom : 0px;
 }
-h6{
+h3{
     margin-top : 0px;
+}
+p{
+    text-align : left;
 }
