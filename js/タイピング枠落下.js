@@ -161,7 +161,7 @@ countInterval=300;
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
-            drawText(ctx,"36px Arial","進学",(canvas.width-72)/2,(canvas.height-36)/2);
+            drawText(ctx,"36px Arial","進級",(canvas.width-72)/2,(canvas.height-36)/2);
             drawText(ctx,"24px Arial","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
             /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
             ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
