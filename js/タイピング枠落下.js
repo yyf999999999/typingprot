@@ -1,5 +1,5 @@
 import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
-import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music} from "./タイピング.js";
+import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 const lineCanvas=document.getElementById("lineCanvas");
@@ -76,8 +76,9 @@ countInterval=300;
             if (enToJn(enInput.text)==enToJn(text[0].en)){
                 fText.push(text[0]);
                 text.shift();
+                ring(music.input[Math.floor(Math.random()*10)]);
+                ring(music.turn);
                 enInput.text="";enWrite.text="";
-                //back.ans="";back.printCharacter="";
                 if (text.length>0) text[0].en=text[0].enC;
             }
         }

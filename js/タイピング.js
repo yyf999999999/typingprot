@@ -191,4 +191,4 @@ function input(e){
 }
 enAnswer.text="値変えまーすwww";
 document.addEventListener("keypress",input,false);
-export {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music};
+export {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring};
