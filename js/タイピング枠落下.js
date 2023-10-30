@@ -54,14 +54,8 @@ countInterval=300;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
         timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
-        //lineCtx.font="24px Arial";lineCtx.fillStyle="#000000";
-        //lineCtx.fillText("60点ライン",36,24);
         drawText(lineCtx,"24px Arial","60点ライン",36,24);
-        //lineCtx.fillStyle="#FF0000";
-        //lineCtx.fillText("0点ライン",48,510);
         drawText(lineCtx,"24px Arial","0点ライン",48,510);
-        //timeCtx.font="24px Arial";timeCtx.fillStyle="#000000";
-        //timeCtx.fillText("残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
         drawText(timeCtx,"24px Arial","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
         if (count%countInterval==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
@@ -83,7 +77,6 @@ countInterval=300;
             }
         }
         for (i=text.length-1;i>=0;i--){
-            //console.log(text.length,text[text.length-1]);
             text[i].y+=0.25;
             console.log(text[i]);
             drawBlock(text[i]);
