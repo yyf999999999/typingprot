@@ -1,5 +1,5 @@
 import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
-import {enToJn,enInput,enAnswer,enWrite,back,typeNumber} from "./タイピング.js";
+import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 const lineCanvas=document.getElementById("lineCanvas");
@@ -107,11 +107,6 @@ countInterval=300;
                     typeNumber.part=0;
                 }
                 drawText(ctx,"36px Arial","試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2)
-                /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
-                ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
-                ctx.font="36px Arial";ctx.fillStyle="#000000";
-                ctx.fillText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);*/
-                //ctx.strokeText("試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2);
             }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
                 if (examContinue.ing&&!examContinue.ed){
                     if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
@@ -123,24 +118,14 @@ countInterval=300;
                         examContinue.ed=true;
                         reExamCount=1000;
                     }
-                    drawText(ctx,"36px Arial","再試突入",(canvas.width-216)/2,(canvas.height-36)/2)
-                    /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
-                    ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
-                    ctx.font="36px Arial";ctx.fillStyle="#000000";
-                    ctx.fillText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);*/
-                    //ctx.strokeText("再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
+                    drawText(ctx,"36px Arial","再試突入",(canvas.width-216)/2,(canvas.height-36)/2);
                 }else{
                     if (count-examCount==1000){
                         countInterval*=2;
                         typeNumber.part=0;
                     } 
                     if (count-examCount==1249) examContinue={ing:false,ed:false};
-                    drawText(ctx,"36px Arial","試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2)
-                    /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
-                    ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
-                    ctx.font="36px Arial";ctx.fillStyle="#000000";
-                    ctx.fillText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);*/
-                    //ctx.strokeText("試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
+                    drawText(ctx,"36px Arial","試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
                 }
             }
         }
@@ -148,31 +133,12 @@ countInterval=300;
             console.log("GAMEOVER");
             drawText(ctx,"36px Arial","留年",(canvas.width-72)/2,(canvas.height-36)/2);
             drawText(ctx,"24px Arial","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
-            /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
-            ctx.fillText("GAMEOVER",(canvas.width-218)/2,);
-            ctx.font="36px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("GAMEOVER",(canvas.width-218)/2,(canvas.height-36)/2);
-            ctx.font="bold 24px Arial";ctx.fillStyle="#FFFFFF";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            ctx.font="24px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);*/
-            //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
         if (Math.ceil(60-(count-controlCount)/100)<=0){
             console.log("GAMECLEAR");
             drawText(ctx,"36px Arial","進級",(canvas.width-72)/2,(canvas.height-36)/2);
             drawText(ctx,"24px Arial","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
-            /*ctx.font="bold 36px Arial";ctx.fillStyle="#FFFFFF";
-            ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
-            ctx.font="36px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
-            //ctx.strokeText("GAMECLEAR",(canvas.width-249)/2,(canvas.height-36)/2);
-            ctx.font="bold 24px Arial";ctx.fillStyle="#FFFFFF";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
-            ctx.font="24px Arial";ctx.fillStyle="#000000";
-            ctx.fillText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);*/
-            //ctx.strokeText("SCORE:"+typeNumber.all,(canvas.width-160)/2,(canvas.height-36)/2+30);
             clearInterval(interval);
         }
     }

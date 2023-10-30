@@ -1,4 +1,10 @@
-const music=new Audio("./../sounds/高専祭　2-I-E/Book02-1(Flip).mp3");
+const path="./../sounds/高専祭　2-I-E/"
+const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
+            input:[ new Audio(`${path}タイプライター・タイプ1.mp3`),new Audio(`${path}タイプライター・タイプ2.mp3`),
+                    new Audio(`${path}タイプライター・タイプ3.mp3`),new Audio(`${path}タイプライター・タイプ4.mp3`),
+                    new Audio(`${path}タイプライター・タイプ5.mp3`),new Audio(`${path}タイプライター・タイプ6.mp3`),
+                    new Audio(`${path}タイプライター・タイプ7.mp3`),new Audio(`${path}タイプライター・タイプ8.mp3`),
+                    new Audio(`${path}タイプライター・タイプ9.mp3`),new Audio(`${path}タイプライター・タイプ10.mp3`)]};
 var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と",
     "な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ",
     "わ","ゐ","ゑ","を","ん","ヴ","が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","ぢ","づ","で","ど",
@@ -162,7 +168,7 @@ function input(e){
                     tfC=tfC||tfI;
                 }
                 if (tfC){
-                    music.currentTime = 0;music.play();
+                    music.input[Math.floor(Math.random()*10)].play();
                     typeNumber.part++;typeNumber.all++;
                     console.log(typeNumber.part);
                 }else{
@@ -182,4 +188,4 @@ function input(e){
 }
 enAnswer.text="値変えまーすwww";
 document.addEventListener("keypress",input,false);
-export {enToJn,enInput,enAnswer,enWrite,back,typeNumber};
+export {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music};
