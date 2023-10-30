@@ -70,7 +70,7 @@ countInterval=300;
             if (enToJn(enInput.text)==enToJn(text[0].en)){
                 fText.push(text[0]);
                 text.shift();
-                ring(music.input[Math.floor(Math.random()*10)]);
+                ring(music.input[Math.floor(Math.random()*8)]);
                 ring(music.turn);
                 enInput.text="";enWrite.text="";
                 if (text.length>0) text[0].en=text[0].enC;
