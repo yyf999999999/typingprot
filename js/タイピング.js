@@ -46,6 +46,9 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
 }
+function ring(sound){
+    sound.currentTime=0;sound.play();
+}
 function jnToEn(letter){
     var convertText=letter.split("");
     for (i=0;i<convertText.length;i++){
@@ -168,7 +171,7 @@ function input(e){
                     tfC=tfC||tfI;
                 }
                 if (tfC){
-                    music.input[Math.floor(Math.random()*10)].play();
+                    ring(music.input[Math.floor(Math.random()*10)]);
                     typeNumber.part++;typeNumber.all++;
                     console.log(typeNumber.part);
                 }else{

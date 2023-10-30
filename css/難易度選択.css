@@ -1,4 +1,4 @@
-div{
+.topDiv{
     text-align : center;
 }
 h1{
@@ -7,6 +7,6 @@ h1{
 h5{
     margin-top : 0px;
 }
-p{
+#rule{
     text-align : left;
 }
