@@ -1,4 +1,4 @@
-const path="./../sounds/高専祭　2-I-E/"
+const path="./../sounds/高専祭　2-I-E/";
 const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
             input:[ new Audio(`${path}タイプライター・タイプ1.mp3`),new Audio(`${path}タイプライター・タイプ2.mp3`),
                     new Audio(`${path}タイプライター・タイプ3.mp3`),new Audio(`${path}タイプライター・タイプ4.mp3`),
