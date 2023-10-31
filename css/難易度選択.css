@@ -11,9 +11,12 @@ h5{
 #rule{
     display : inline-block;
 }
-#rule-content{
+#rule-text{
     display : inline-block;
     text-align : left;
+}
+.rule-image{
+    display : inline-block;
 }
 button{
     margin-bottom : 8px;
