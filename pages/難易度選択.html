@@ -38,7 +38,8 @@
             function changeDifficulty(dif){
                 obj=document.getElementById('difficulty');
                 obj.innerHTML=`現在の難易度:${dif}`;
-                console.log(dif,obj);
+                localStorage.setItem("difficulty",dif);
+                //console.log(dif,obj);
             }
         </script>
         <h2>難易度</h2>
