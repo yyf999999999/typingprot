@@ -26,11 +26,18 @@
         </div>
     </div>
     <div class="topDiv">
+        <script>
+            function changeDifficulty(difficulty){
+                obj=document.getElementById('difficulty').innerHTML;
+                obj=`現在の難易度:${difficulty}`;
+            }
+        </script>
         <h2>難易度</h2>
-        <button>やさしい</button>
+        <button onclick="changeDifficulty('やさしい')">やさしい</button>
         <button>普通</button>
         <button>難しい</button>
         <button>地獄</button><br>
+        <p id="difficulty">現在の難易度:普通</p>
         <a href="タイピング枠落下.html" rel="noreferrer noopener" target="_blank">スタート</a>
     </div>
 </body>
