@@ -23,21 +23,22 @@
             試験期間は通常より多くの単語が降ってきます<br>
             試験期間にたくさん入力すると、再試になり制限時間が10秒延長されます<br>
             たくさん単位を取得してハイスコアを目指そう!</p>
+            <a></a>
         </div>
     </div>
     <div class="topDiv">
         <script>
             function changeDifficulty(dif){
-                obj=document.getElementById('difficulty').innerHTML;
+                obj=document.getElementById('difficulty').textContent;
                 obj=`現在の難易度:${dif}`;
                 console.log(dif,obj);
             }
         </script>
         <h2>難易度</h2>
         <button onclick="changeDifficulty('やさしい')">やさしい</button>
-        <button>普通</button>
-        <button>難しい</button>
-        <button>地獄</button><br>
+        <button onclick="changeDifficulty('普通')">普通</button>
+        <button onclick="changeDifficulty('難しい')">難しい</button>
+        <button onclick="changeDifficulty('地獄')">地獄</button><br>
         <p id="difficulty">現在の難易度:普通</p>
         <a href="タイピング枠落下.html" rel="noreferrer noopener" target="_blank">スタート</a>
     </div>
