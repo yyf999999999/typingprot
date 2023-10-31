@@ -12,7 +12,7 @@
         <h5>新感覚タイピングゲーム</h5>
     </div>
     <div class="topDiv">
-        <h2>~ルール説明~</h2>
+        <h2>ルール説明</h2>
         <div onclick="obj=document.getElementById('rule').style; obj.display=(obj.display=='none')?'inline-block':'none';">
             <a style="cursor:pointer;">▼ クリックで表示</a>
         </div>
@@ -48,6 +48,28 @@
         <button onclick="changeDifficulty('地獄')">地獄</button><br>
         <p id="difficulty">現在の難易度:普通</p>
         <a href="タイピング枠落下.html">スタート</a>
+    </div>
+    <div class="topDiv">
+        <h2>スコア</h2>
+        <div onclick="obj=document.getElementById('score').style; obj.display=(obj.display=='none')?'inline-block':'none';">
+            <a style="cursor:pointer;">▼ クリックで表示</a>
+        </div>
+        <div id="score" style="display:none;clear:both;">
+            <h3>1位:<br>
+                2位:<br>
+                3位:</h3>
+            <p>4位:<br>
+                5位:
+            </p>
+        </div>
+    </div>
+    <div class="topDiv">
+        <div onclick="obj=document.getElementById('credit').style; obj.display=(obj.display=='none')?'inline-block':'none';">
+            <a style="cursor:pointer;">▼ クリックで表示</a>
+        </div>
+        <div id="credit" style="display:none;clear:both;">
+            <p>ここにクレジットを表示</p>
+        </div>
     </div>
 </body>
 </html>
