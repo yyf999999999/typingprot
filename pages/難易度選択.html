@@ -29,8 +29,8 @@
     <div class="topDiv">
         <script>
             function changeDifficulty(dif){
-                obj=document.getElementById('difficulty').textContent;
-                obj=`現在の難易度:${dif}`;
+                obj=document.getElementById('difficulty');
+                obj.innerHTML=`現在の難易度:${dif}`;
                 console.log(dif,obj);
             }
         </script>
