@@ -24,9 +24,7 @@ button{
 #score{
     text-align : center;
 }
-ol{
-    white-space: nowrap;
-}
 .dScore{
     text-align : left;
+    display : inline-block;
 }
