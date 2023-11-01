@@ -28,7 +28,7 @@ switch (difficulty){
         break;
     }
     case "地獄":{
-        countInterval=200;
+        countInterval=150;
         typeNumber.standard=125;
         break;
     }
@@ -156,6 +156,7 @@ function main(){
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
         var score=JSON.parse(localStorage.getItem("score"))[difficulty];
+        console.log(score);
         if (score[4]<typeNumber.all){
             for (i=4;i>0;i--){
                 if (score[i]>typeNumber.all)break;
