@@ -34,24 +34,6 @@
         </div>
     </div>
     <div class="topDiv">
-        <script>
-            localStorage.setItem("difficulty","普通");
-            function changeDifficulty(dif){
-                obj=document.getElementById('difficulty');
-                obj.innerHTML=`現在の難易度:${dif}`;
-                localStorage.setItem("difficulty",dif);
-                //console.log(dif,obj);
-            }
-        </script>
-        <h2>難易度</h2>
-        <button onclick="changeDifficulty('やさしい')">やさしい</button>
-        <button onclick="changeDifficulty('普通')">普通</button>
-        <button onclick="changeDifficulty('難しい')">難しい</button>
-        <button onclick="changeDifficulty('地獄')">地獄</button><br>
-        <p id="difficulty">現在の難易度:普通</p>
-        <a href="タイピング枠落下.html">スタート</a>
-    </div>
-    <div class="topDiv">
         <h2>スコア</h2>
         <div onclick="obj=document.getElementById('score').style; obj.display=(obj.display=='none')?'inline-block':'none';">
             <a style="cursor:pointer;">▼ クリックで表示</a>
@@ -99,6 +81,24 @@
         <div id="credit" style="display:none;clear:both;">
             <p>ここにクレジットを表示</p>
         </div>
+    </div>
+    <div class="topDiv">
+        <script>
+            localStorage.setItem("difficulty","普通");
+            function changeDifficulty(dif){
+                obj=document.getElementById('difficulty');
+                obj.innerHTML=`現在の難易度:${dif}`;
+                localStorage.setItem("difficulty",dif);
+                //console.log(dif,obj);
+            }
+        </script>
+        <h2>難易度</h2>
+        <button onclick="changeDifficulty('やさしい')">やさしい</button>
+        <button onclick="changeDifficulty('普通')">普通</button>
+        <button onclick="changeDifficulty('難しい')">難しい</button>
+        <button onclick="changeDifficulty('地獄')">地獄</button><br>
+        <p id="difficulty">現在の難易度:普通</p>
+        <a href="タイピング枠落下.html">スタート</a>
     </div>
 </body>
 </html>

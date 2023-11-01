@@ -10,10 +10,22 @@ var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000,
     difficulty=localStorage.getItem('difficulty');
 switch (difficulty){
-    case "やさしい":countInterval=1000;
-    case "普通":countInterval=500;
-    case "難しい":countInterval=300;
-    case "地獄":countInterval=200;
+    case "やさしい": {
+        countInterval=1000;
+        typeNumber.standard=25;
+    }
+    case "普通":{
+        countInterval=500;
+        typeNumber.standard=60;
+    }
+    case "難しい":{
+        countInterval=300;
+        typeNumber.standard=100;
+    }
+    case "地獄":{
+        countInterval=200;
+        typeNumber.standard=125;
+    }
 }
 countInterval=300;
     function drawBlock(letter){
@@ -62,7 +74,7 @@ countInterval=300;
         lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
         timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
         drawText(lineCtx,"24px Arial","#000000","60点ライン",36,24);
-        drawText(lineCtx,"24px Arial","#FFFFFF","0点ライン",48,510);
+        drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
         drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
         if (count%countInterval==0){
             var number=Math.floor(Math.random()*textWarehouse.length),textX;
