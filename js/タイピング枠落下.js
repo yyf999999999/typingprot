@@ -12,13 +12,13 @@ var text=[],fText=[],examContinue={ing:false,ed:false},
 switch (difficulty){
     case "やさしい": {
         countInterval=750;
-        typeNumber.standard=25;
+        typeNumber.standard=20;
         typeNumber.limit=10;
         break;
     }
     case "普通":{
         countInterval=500;
-        typeNumber.standard=60;
+        typeNumber.standard=50;
         typeNumber.limit=20;
         break;
     }
