@@ -14,22 +14,26 @@ switch (difficulty){
         countInterval=750;
         typeNumber.standard=20;
         typeNumber.limit=10;
+        difficulty="easy";
         break;
     }
     case "普通":{
         countInterval=500;
         typeNumber.standard=50;
         typeNumber.limit=20;
+        difficulty="normal";
         break;
     }
     case "難しい":{
         countInterval=300;
         typeNumber.standard=100;
+        difficulty="hard";
         break;
     }
     case "地獄":{
         countInterval=150;
         typeNumber.standard=125;
+        difficulty="hell";
         break;
     }
 }
@@ -74,7 +78,6 @@ function drawText(context,font,color,letter,x,y){
     context.fillText(letter,x,y);
 }
 function main(){
-    count++;
     ctx.clearRect(0,0,canvas.width,canvas.height);
     lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
     timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
@@ -173,6 +176,7 @@ function main(){
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
     }
+    count++;
 }
 interval=setInterval(main,10);
 interval;
