@@ -155,7 +155,16 @@ function main(){
         drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
-        
+        var score=JSON.parse(localStorage.getItem("score")[difficulty]);
+        if (score[4]<typeNumber.all){
+            for (i=4;i>0;i--){
+                if (score[i]>typeNumber.all)break;
+            }
+            for (n=4;n>i;n++){
+                score[n]=score[n-1];
+            }
+            score[i]=typeNumber.all;
+        }
     }
     if (Math.ceil(60-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");
