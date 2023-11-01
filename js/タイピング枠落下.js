@@ -14,19 +14,23 @@ switch (difficulty){
         countInterval=500;
         typeNumber.standard=50;
         typeNumber.limit=10;
+        break;
     }
     case "普通":{
         countInterval=400;
         typeNumber.standard=75;
         typeNumber.limit=20;
+        break;
     }
     case "難しい":{
         countInterval=300;
         typeNumber.standard=100;
+        break;
     }
     case "地獄":{
         countInterval=200;
         typeNumber.standard=125;
+        break;
     }
 }
 function drawBlock(letter){
