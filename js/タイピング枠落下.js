@@ -7,7 +7,7 @@ const lineCtx=lineCanvas.getContext("2d");
 const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
-    count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000,
+    count=0,examCount=-2000,controlCount=0,letter,i,n,interval,countInterval,reExamCount=1000,
     difficulty=localStorage.getItem('difficulty');
 switch (difficulty){
     case "やさしい": {
