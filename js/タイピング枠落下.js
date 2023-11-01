@@ -155,6 +155,7 @@ function main(){
         drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
+        
     }
     if (Math.ceil(60-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");

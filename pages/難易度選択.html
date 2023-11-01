@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="styleSheet" href="./../css/難易度選択.css">
     <title>単位を落とすな</title>
+    <script>
+        localStorage.setItem("score",{easy:[0,0,0,0,0],normal:[0,0,0,0,0],hard:[0,0,0,0,0],hell:[0,0,0,0,0]})
+    </script>
 </head>
 <body>
     <div class="topDiv">
@@ -58,36 +61,45 @@
         <div id="score" style="display:none;clear:both;">
             <ol class="dScore" id="easy">
                 <h4>やさしい</h4>
-                <li>500</li>
-                <li>400</li>
-                <li>300</li>
-                <li>200</li>
-                <li>100</li>
+                <li id="easy1">500</li>
+                <li id="easy2">400</li>
+                <li id="easy3">300</li>
+                <li id="easy4">200</li>
+                <li id="easy5">100</li>
             </ol>
             <ol class="dScore" id="normal">
                 <h4>普通</h4>
-                <li>500</li>
-                <li>400</li>
-                <li>300</li>
-                <li>200</li>
-                <li>100</li>
+                <li id="normal1">500</li>
+                <li id="normal2">400</li>
+                <li id="normal3">300</li>
+                <li id="normal4">200</li>
+                <li id="normal5">100</li>
             </ol>
             <ol class="dScore" id="hard">
                 <h4>難しい</h4>
-                <li>500</li>
-                <li>400</li>
-                <li>300</li>
-                <li>200</li>
-                <li>100</li>
+                <li id="hard1">500</li>
+                <li id="hard2">400</li>
+                <li id="hard3">300</li>
+                <li id="hard4">200</li>
+                <li id="hard5">100</li>
             </ol>
             <ol class="dScore" id="hell">
                 <h4>地獄</h4>
-                <li>500</li>
-                <li>400</li>
-                <li>300</li>
-                <li>200</li>
-                <li>100</li>
+                <li id="hell1">500</li>
+                <li id="hell2">400</li>
+                <li id="hell3">300</li>
+                <li id="hell4">200</li>
+                <li id="hell5">100</li>
             </ol>
+            <script>
+                const data=JSON.parse(localStorage.getItem("score"));
+                const key=Object.keys(data)
+                for (n=0;n<4;n++){
+                    for (i=0;i<5;i++){
+                        document.getElementById(`${key[n]}${i+1}`).innerHTML=data[key[n]];
+                    }
+                }
+            </script>
         </div>
     </div>
     <div class="topDiv">
