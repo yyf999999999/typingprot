@@ -83,7 +83,7 @@ function main(){
     drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
     if (count%countInterval==0){
         var number=0,textX;
-        while (textWarehouse[number].en.length<typeNumber.limit){
+        while (typeNumber.limit<textWarehouse[number].en.length){
             var number=Math.floor(Math.random()*textWarehouse.length);
         }
         if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
