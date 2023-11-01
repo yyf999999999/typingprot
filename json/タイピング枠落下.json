@@ -1,5 +1,9 @@
 [
 	{
+		"jn":"テスト",
+		"en":"onehundredonehundredonehundredonehundredonehundredonehundredonehundredonehundredonehundredonehundred1"
+	}
+	,{
 		"jn":"国語",
 		"en":"kokugo"
 	},
@@ -1037,7 +1041,7 @@
     },
     {
         "jn":"応用制御工学",
-        "en":"ouyouseigyokougkaku"
+        "en":"ouyouseigyokougaku"
     },
     {
         "jn":"ロボット制御",

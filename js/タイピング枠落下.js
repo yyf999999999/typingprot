@@ -11,13 +11,13 @@ var text=[],fText=[],examContinue={ing:false,ed:false},
     difficulty=localStorage.getItem('difficulty');
 switch (difficulty){
     case "やさしい": {
-        countInterval=500;
+        countInterval=750;
         typeNumber.standard=50;
         typeNumber.limit=10;
         break;
     }
     case "普通":{
-        countInterval=400;
+        countInterval=500;
         typeNumber.standard=75;
         typeNumber.limit=20;
         break;
@@ -82,7 +82,10 @@ function main(){
     drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
     drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
     if (count%countInterval==0){
-        var number=Math.floor(Math.random()*textWarehouse.length),textX;
+        var number=0,textX;
+        while (textWarehouse[number].en.length<typeNumber.limit){
+            var number=Math.floor(Math.random()*textWarehouse.length);
+        }
         if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
             textX=Math.floor(Math.random()*(canvas.width/1.25-textWarehouse[number].jn.length*24-25))+9;
         }else{
