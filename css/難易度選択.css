@@ -21,6 +21,9 @@ h5{
 button{
     margin-bottom : 8px;
 }
+#score{
+    text-align : center;
+}
 .dScore{
     text-align : left;
 }
