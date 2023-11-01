@@ -26,4 +26,5 @@ button{
 }
 .dScore{
     text-align : left;
+    white-space: nowrap;
 }
