@@ -35,6 +35,7 @@
     </div>
     <div class="topDiv">
         <script>
+            localStorage.setItem("difficulty","普通");
             function changeDifficulty(dif){
                 obj=document.getElementById('difficulty');
                 obj.innerHTML=`現在の難易度:${dif}`;
@@ -56,12 +57,28 @@
             <a style="cursor:pointer;">▼ クリックで表示</a>
         </div>
         <div id="score" style="display:none;clear:both;">
-            <h4>1位:513</h4>
+            <ol class="dScore" id="easy">
+                <h4>やさしい</h4>
+                <ul>500</ul>
+                <ul>400</ul>
+                <ul>300</ul>
+                <ul>200</ul>
+                <ul>100</ul>
+            </ol>
+            <ol class="dScore" id="normal">
+                <h4>普通</h4>
+                <ul>500</ul>
+                <ul>400</ul>
+                <ul>300</ul>
+                <ul>200</ul>
+                <ul>100</ul>
+            </ol>
+            <!--<h4>1位:513</h4>
             <h4>2位:521</h4>
             <h4>3位:433</h4>
             <p>4位:312<br>
                 5位:50
-            </p>
+            </p>-->
         </div>
     </div>
     <div class="topDiv">
