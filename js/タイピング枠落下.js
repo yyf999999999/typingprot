@@ -6,9 +6,15 @@ const lineCanvas=document.getElementById("lineCanvas");
 const lineCtx=lineCanvas.getContext("2d");
 const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
-console.log(localStorage.getItem('difficulty'));
 var text=[],fText=[],examContinue={ing:false,ed:false},
-    count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000;
+    count=0,examCount=-2000,controlCount=0,letter,i,interval,countInterval,reExamCount=1000,
+    difficulty=localStorage.getItem('difficulty');
+switch (difficulty){
+    case "やさしい":countInterval=1000;
+    case "普通":countInterval=500;
+    case "難しい":countInterval=300;
+    case "地獄":countInterval=200;
+}
 countInterval=300;
     function drawBlock(letter){
         if (enWrite.text!=""&&i==0){
