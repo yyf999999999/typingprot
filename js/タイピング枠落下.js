@@ -11,12 +11,14 @@ var text=[],fText=[],examContinue={ing:false,ed:false},
     difficulty=localStorage.getItem('difficulty');
 switch (difficulty){
     case "やさしい": {
-        countInterval=1000;
-        typeNumber.standard=25;
+        countInterval=500;
+        typeNumber.standard=50;
+        typeNumber.limit=10;
     }
     case "普通":{
-        countInterval=500;
-        typeNumber.standard=60;
+        countInterval=400;
+        typeNumber.standard=75;
+        typeNumber.limit=20;
     }
     case "難しい":{
         countInterval=300;
