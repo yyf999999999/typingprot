@@ -103,7 +103,6 @@ function drawOBlock(obj){
     obj.context.fill();obj.context.stroke();
     obj.conetxt.closePath();
 }
-drawOBlock({context:timeCtx,x:2,y:480,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
 function main(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
@@ -111,6 +110,9 @@ function main(){
     drawText(lineCtx,"24px Arial","#000000","60点ライン",36,24);
     drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
     drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
+    drawText(timeCtx,"24px Arial","#000000","試験期間ゲージ",2,476)
+    drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
+    drawOBlock({context:timeCtx,x:2,y:478,width:146+(typeNumber.part/typeNumber.standard),height:32,fillColor:"#0000FF",strokeColor:"#0000FF"});
     if (count%countInterval==0){
         var number=0,textX;
         while (typeNumber.limit<textWarehouse[number].en.length){
