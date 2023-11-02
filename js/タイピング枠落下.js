@@ -53,7 +53,9 @@ function finish(){
         score[i]=typeNumber.all;
         data[difficulty]=score;
         localStorage.setItem("score",JSON.stringify(data))
-        drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-192)/2,(canvas.height-36)/2+54);
+        drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-194)/2,(canvas.height-36)/2+56);
+    }else{
+        drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
     }
 }
 function drawBlock(letter){
