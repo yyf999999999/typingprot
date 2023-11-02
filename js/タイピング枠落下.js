@@ -224,4 +224,4 @@ function main(){
 }
 ring(music.countdown);
 interval=setInterval(main,10);
-setTimeout(function rest(){interval;},3000);
+setTimeout(function(){interval;},3000);
