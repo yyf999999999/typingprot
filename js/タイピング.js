@@ -6,7 +6,7 @@ const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
                     new Audio(`${path}${write}5.mp3`),new Audio(`${path}${write}6.mp3`),
                     new Audio(`${path}${write}7.mp3`),new Audio(`${path}${write}8.mp3`)
                     /*,new Audio(`${path}${write}9.mp3`),new Audio(`${path}${write}10.mp3`)*/],
-            miss:new Audio(`${path}buzzershort.mp3`)};
+            miss:new Audio(`${path}buzzershort.mp3`),countdown:new Audio(`${path}countdown.mp3`)};
 var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と",
     "な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ",
     "わ","ゐ","ゑ","を","ん","ヴ","が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","ぢ","づ","で","ど",
