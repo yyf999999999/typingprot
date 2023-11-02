@@ -18,16 +18,19 @@
         <a>  </a>
         <a href="タイピング枠落下.html">リトライ</a>
     </div><br>
-    <div class="topDiv">
+    <div id="form" class="topDiv" style="display:none">
         <label for="username">ユーザーネーム入力</label>
         <input type="text" id="username">
         <button onclick="user(document.getElementById('username').value)">登録</button>
         <script>
             function user(name){
                 console.log(name);
+                document.getElementById("form").style.display="none";
+                document.getElementById("notification").style.display="block";
             }
         </script>
     </div>
+    <p id="notification" class="topDiv" style="display:none">入力しました</p>
     <!--<p id="zeroLine">0点ライン</p>-->
     <script type="module" src="./../js/タイピング枠落下.js"></script>
 </body>
