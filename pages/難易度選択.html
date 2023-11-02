@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="styleSheet" href="./../css/難易度選択.css">
     <title>単位を落とすな</title>
-    <script>
-        localStorage.setItem("score",JSON.stringify({easy:[0,0,0,0,0],normal:[0,0,0,0,0],hard:[0,0,0,0,0],hell:[0,0,0,0,0]}));
-    </script>
 </head>
 <body>
     <div class="topDiv">
@@ -90,7 +87,7 @@
                 <li id="hell3">300</li>
                 <li id="hell4">200</li>
                 <li id="hell5">100</li>
-            </ol>
+            </ol><br>
             <script>
                 const data=JSON.parse(localStorage.getItem("score"));
                 const key=Object.keys(data)
@@ -99,7 +96,11 @@
                         document.getElementById(`${key[n]}${i+1}`).innerHTML=data[key[n]][i];
                     }
                 }
+                function scoreReset(){
+                    localStorage.setItem("score",JSON.stringify({easy:[0,0,0,0,0],normal:[0,0,0,0,0],hard:[0,0,0,0,0],hell:[0,0,0,0,0]}));
+                }
             </script>
+            <button onclick="scoreReset();">スコアを初期化する</button>
         </div>
     </div>
     <div class="topDiv">
