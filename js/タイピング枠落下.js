@@ -54,7 +54,7 @@ function finish(){
         data[difficulty]=score;
         localStorage.setItem("score",JSON.stringify(data))
         drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-194)/2,(canvas.height-36)/2+56);
-        drawText(ctx,"24px Arial","#000000","下のフォームからユーザーネームを入力してね",(canvas.width-492)/2,(canvas.height-36)/2+76);
+        drawText(ctx,"24px Arial","#000000","下のフォームからユーザーネームを入力してね",(canvas.width-492)/2,(canvas.height-36)/2+78);
     }else{
         drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
     }
@@ -203,6 +203,7 @@ function main(){
     }
     if (text.length>0) if (text[0].y>512){
         console.log("GAMEOVER");
+        drawOBlock({context:ctx,x:(canvas.width-492)/2,y:(canvas.height-36)/2,width:492,height:110,fillColor:"#FFFFFF",strokeColor:"#FFFFF"});
         drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
@@ -210,6 +211,7 @@ function main(){
     }
     if (Math.ceil(60-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");
+        drawOBlock({context:ctx,x:(canvas.width-492)/2,y:(canvas.height-36)/2,width:492,height:110,fillColor:"#FFFFFF",strokeColor:"#FFFFF"});
         drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
