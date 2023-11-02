@@ -112,11 +112,11 @@ function main(){
     drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
     drawText(timeCtx,"24px Arial","#000000","試験ゲージ",2,474)
     drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
-    if (count-examCount<1000){
-        if (examContinue.ing){
-            drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#0000FF",strokeColor:"#000000"});
+    if (count-examCount<1000||controlCount!=0){
+        if (controlCount!=0||examContinue.ing){
+            drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#FF0000",strokeColor:"#000000"});
         }else{
-            drawOBlock({context:timeCtx,x:2,y:478,width:146*(typeNumber.part/(typeNumber.standard/2)),height:32,fillColor:"#0000FF",strokeColor:"#000000"});
+            drawOBlock({context:timeCtx,x:2,y:478,width:146*(typeNumber.part/(typeNumber.standard/2)),height:32,fillColor:"#00FF00",strokeColor:"#000000"});
         }
     }else{
         drawOBlock({context:timeCtx,x:2,y:478,width:146*(typeNumber.part/typeNumber.standard),height:32,fillColor:"#0000FF",strokeColor:"#000000"});
