@@ -226,4 +226,4 @@ ring(music.countdown);
 setTimeout(function(){
     interval=setInterval(main,10);
     interval;
-},3000);
+},3500);
