@@ -37,6 +37,21 @@ switch (difficulty){
         break;
     }
 }
+function finish(){
+    var data=JSON.parse(localStorage.getItem("score"));
+    var score=data[difficulty];
+    if (score[4]<typeNumber.all){
+        for (i=4;i>0;i--){
+            if (score[i]>typeNumber.all)break;
+        }
+        for (n=4;n>i;n--){
+            score[n]=score[n-1];
+        }
+        score[i]=typeNumber.all;
+        data[difficulty]=score;
+        localStorage.setItem("score",JSON.stringify(data))
+    }
+}
 function drawBlock(letter){
     if (enWrite.text!=""&&i==0){
         letter.en=enWrite.text;
@@ -158,27 +173,14 @@ function main(){
         drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
-        var data=JSON.parse(localStorage.getItem("score"));
-        var score=data[difficulty];
-        console.log(score,difficulty);
-        if (score[4]<typeNumber.all){
-            for (i=4;i>0;i--){
-                if (score[i]>typeNumber.all)break;
-            }
-            for (n=4;n>i;n--){
-                score[n]=score[n-1];
-            }
-            score[i]=typeNumber.all;
-            data[difficulty]=score;
-            localStorage.setItem("score",JSON.stringify(data))
-            console.log(score,JSON.parse(localStorage.getItem("score"))[difficulty]);
-        }
+        finish();
     }
     if (Math.ceil(60-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");
         drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
+        finish();
     }
     count++;
 }
