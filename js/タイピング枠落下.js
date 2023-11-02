@@ -53,6 +53,7 @@ function finish(){
         score[i]=typeNumber.all;
         data[difficulty]=score;
         localStorage.setItem("score",JSON.stringify(data))
+        drawText(ctx,`第${i+1}位ランクイン!`,"24px Arial","#000000",(canvas.width-96)/2,(canvas.height-36)/2+50);
     }
 }
 function drawBlock(letter){
@@ -110,7 +111,7 @@ function main(){
     drawText(lineCtx,"24px Arial","#000000","60点ライン",36,24);
     drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
     drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
-    drawText(timeCtx,"24px Arial","#000000","試験ゲージ",2,474)
+    drawText(timeCtx,"24px Arial","#000000","試験ゲージ",2,474);
     drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
     if (count-examCount<1000||controlCount!=0){
         if (controlCount!=0||examContinue.ing){
