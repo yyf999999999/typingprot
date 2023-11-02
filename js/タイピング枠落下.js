@@ -95,6 +95,15 @@ function drawText(context,font,color,letter,x,y){
     context.fillStyle=color;
     context.fillText(letter,x,y);
 }
+function drawOBlock(obj){
+    obj.context.beginPath();
+    obj.context.rect(obj.x,obj.y,obj.width,obj.height);
+    obj.context.fillStyle=obj.fillColor;
+    obj.context.strokeStyle=obj.strokeColor;
+    obj.context.fill();obj.context.stroke();
+    obj.conetxt.closePath();
+}
+drawOBlock({context:timeCtx,x:2,y:480,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
 function main(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
