@@ -26,10 +26,10 @@
             function user(name){
                 var username=JSON.parse(localStorage.getItem("username")),difficulty=localStorage.getItem("difficulty");
                 switch (difficulty){
-                    case "やさしい":difficulty=easy;break;
-                    case "普通":difficulty=normal;break;
-                    case "難しい":difficulty=hard;break;
-                    case "地獄":difficulty=hell;break;
+                    case "やさしい":difficulty="easy";break;
+                    case "普通":difficulty="normal";break;
+                    case "難しい":difficulty="hard";break;
+                    case "地獄":difficulty="hell";break;
                 }
                 username[difficulty][localStorage.getItem("rank")]=name;
                 localStorage.setItem("username",JSON.stringify(username));
