@@ -38,8 +38,8 @@ switch (difficulty){
     }
 }
 function finish(){
-    var data=JSON.parse(localStorage.getItem("score"));
-    var score=data[difficulty];
+    var data=JSON.parse(localStorage.getItem("score")),uData=JSON.parse(localStorage.getItem("username"));
+    var score=data[difficulty],username=uData[difficulty];
     if (score[4]<typeNumber.all){
         for (i=4;i>=-1;i--){
             if (i==-1)break;
@@ -49,10 +49,11 @@ function finish(){
         console.log(`i=${i}`);
         for (n=4;n>i;n--){
             score[n]=score[n-1];
+            username[n]=username[n-1];
         }
-        score[i]=typeNumber.all;
-        data[difficulty]=score;
-        localStorage.setItem("score",JSON.stringify(data));
+        score[i]=typeNumber.all;username[i]="名無し";
+        data[difficulty]=score;uData[difficulty]=username;
+        localStorage.setItem("score",JSON.stringify(data));localStorage.setItem("username",JSON.stringify(uData));
         drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-194)/2,(canvas.height-36)/2+56);
         drawText(ctx,"24px Arial","#000000","下のフォームからユーザーネームを入力してね",(canvas.width-492)/2,(canvas.height-36)/2+78);
         localStorage.setItem("rank",i);
