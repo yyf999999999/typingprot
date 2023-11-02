@@ -140,6 +140,7 @@ function main(){
         if (enToJn(enInput.text)==enToJn(text[0].en)){
             fText.push(text[0]);
             text.shift();
+            typeNumber.part++;typeNumber.all++;
             ring(music.input[Math.floor(Math.random()*8)]);
             ring(music.turn);
             enInput.text="";enWrite.text="";
