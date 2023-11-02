@@ -223,6 +223,5 @@ function main(){
     count++;
 }
 ring(music.countdown);
-setTimeout(function rest(){},3000);
 interval=setInterval(main,10);
-interval;
+setTimeout(function rest(){interval;},3000);
