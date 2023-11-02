@@ -168,7 +168,7 @@ function main(){
                 score[n]=score[n-1];
             }
             score[i]=typeNumber.all;
-            console.log(score);
+            console.log(score,localStorage.getItem("score")[difficulty]);
         }
     }
     if (Math.ceil(60-(count-controlCount)/100)<=0){
