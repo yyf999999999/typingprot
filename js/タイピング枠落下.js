@@ -161,10 +161,10 @@ function main(){
         var score=JSON.parse(localStorage.getItem("score"))[difficulty];
         console.log(score,difficulty);
         if (score[4]<typeNumber.all){
-            for (i=4;i>1;i--){
+            for (i=4;i>0;i--){
                 if (score[i]>typeNumber.all)break;
             }
-            for (n=4;n>i;n++){
+            for (n=4;n>i;n--){
                 score[n]=score[n-1];
             }
             score[i]=typeNumber.all;
