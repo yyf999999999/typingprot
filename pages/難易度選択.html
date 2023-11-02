@@ -105,11 +105,12 @@
                 const key=Object.keys(data)
                 for (n=0;n<4;n++){
                     for (i=0;i<5;i++){
-                        document.getElementById(`${key[n]}${i+1}`).innerHTML=data[key[n]][i];
+                        document.getElementById(`${key[n]}${i+1}`).innerHTML=username[key[n]][i]+data[key[n]][i];
                     }
                 }
                 function scoreReset(){
                     localStorage.setItem("score",JSON.stringify({easy:[0,0,0,0,0],normal:[0,0,0,0,0],hard:[0,0,0,0,0],hell:[0,0,0,0,0]}));
+                    localStorage.setItem("username",JSON.stringify({easy:["名無し","名無し","名無し","名無し","名無し"],normal:["名無し","名無し","名無し","名無し","名無し"],hard:["名無し","名無し","名無し","名無し","名無し"],hell:["名無し","名無し","名無し","名無し","名無し"]}))
                 }
             </script>
             <button onclick="scoreReset();">スコアを初期化する</button>
