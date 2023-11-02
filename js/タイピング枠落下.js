@@ -45,7 +45,7 @@ function finish(){
             if (i=1)break;
             if (score[i-1]>typeNumber.all)break;
         }
-        i++;
+        i--;
         console.log(`i=${i}`);
         for (n=4;n>i;n--){
             score[n]=score[n-1];
