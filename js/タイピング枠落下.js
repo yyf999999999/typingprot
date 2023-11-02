@@ -101,7 +101,7 @@ function drawOBlock(obj){
     obj.context.fillStyle=obj.fillColor;
     obj.context.strokeStyle=obj.strokeColor;
     obj.context.fill();obj.context.stroke();
-    obj.conetxt.closePath();
+    obj.context.closePath();
 }
 function main(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
