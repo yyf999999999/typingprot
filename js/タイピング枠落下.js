@@ -53,7 +53,7 @@ function finish(){
         score[i]=typeNumber.all;
         data[difficulty]=score;
         localStorage.setItem("score",JSON.stringify(data))
-        drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-96)/2,(canvas.height-36)/2+42);
+        drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-192)/2,(canvas.height-36)/2+54);
     }
 }
 function drawBlock(letter){
