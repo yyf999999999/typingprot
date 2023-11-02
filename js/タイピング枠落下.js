@@ -211,7 +211,7 @@ function main(){
     }
     if (Math.ceil(60-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");
-        drawOBlock({context:ctx,x:(canvas.width-492)/2,y:(canvas.height-36)/2,width:492,height:110,fillColor:"#FFFFFF",strokeColor:"#FFFFF"});
+        drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
         drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
