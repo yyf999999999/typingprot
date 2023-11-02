@@ -17,6 +17,16 @@
         <a href="難易度選択.html">タイトルに戻る</a>
         <a>  </a>
         <a href="タイピング枠落下.html">リトライ</a>
+    </div><br>
+    <div>
+        <label for="username">ユーザーネーム入力</label>
+        <input type="text" id="username">
+        <button onclick="user(document.getElementById('username').value)"></button>
+        <script>
+            function user(name){
+                console.log(name);
+            }
+        </script>
     </div>
     <!--<p id="zeroLine">0点ライン</p>-->
     <script type="module" src="./../js/タイピング枠落下.js"></script>
