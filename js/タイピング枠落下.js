@@ -41,10 +41,10 @@ function finish(){
     var data=JSON.parse(localStorage.getItem("score"));
     var score=data[difficulty];
     if (score[4]<typeNumber.all){
-        for (i=4;i>0;i){
+        for (i=4;i>0;i--){
             if (score[i]>typeNumber.all)break;
-            i--;
         }
+        i++;
         console.log(`i=${i}`);
         for (n=4;n>i;n--){
             score[n]=score[n-1];
