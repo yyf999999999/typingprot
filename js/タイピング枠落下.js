@@ -54,6 +54,7 @@ function finish(){
         data[difficulty]=score;
         localStorage.setItem("score",JSON.stringify(data))
         drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-194)/2,(canvas.height-36)/2+56);
+        drawText(ctx,"24px Arial","#000000","下のフォームからユーザーネームを入力してね",(canvas.width-194)/2,(canvas.height-36)/2+72);
     }else{
         drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
     }
@@ -128,7 +129,7 @@ function main(){
     drawText(timeCtx,"24px Arial","#000000","ランキング",2,48);
     var rank=JSON.parse(localStorage.getItem("score"))[difficulty];
     for (i=0;i<5;i++){
-        drawText(timeCtx,"24px Arial","#000000",`${i+1}${rank[i]}`,2,24*(3+i));
+        drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(4+i));
     }
     if (count%countInterval==0){
         var number=0,textX;
