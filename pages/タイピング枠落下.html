@@ -24,6 +24,15 @@
         <button onclick="user(document.getElementById('username').value)">登録</button>
         <script>
             function user(name){
+                var username=JSON.parse(localStorage.getItem("username")),difficulty=localStorage.getItem("difficulty");
+                switch (difficulty){
+                    case "やさしい":difficulty=easy;break;
+                    case "普通":difficulty=normal;break;
+                    case "難しい":difficulty=hard;break;
+                    case "地獄":difficulty=hell;break;
+                }
+                username[difficulty][localStorage.getItem("rank")]=name;
+                localStorage.setItem("username",JSON.stringify(username));
                 console.log(name);
                 document.getElementById("form").style.display="none";
                 document.getElementById("notification").style.display="block";

@@ -52,9 +52,10 @@ function finish(){
         }
         score[i]=typeNumber.all;
         data[difficulty]=score;
-        localStorage.setItem("score",JSON.stringify(data))
+        localStorage.setItem("score",JSON.stringify(data));
         drawText(ctx,"24px Arial","#000000",`第${i+1}位ランクイン!`,(canvas.width-194)/2,(canvas.height-36)/2+56);
         drawText(ctx,"24px Arial","#000000","下のフォームからユーザーネームを入力してね",(canvas.width-492)/2,(canvas.height-36)/2+78);
+        localStorage.setItem("rank",i);
         document.getElementById("form").style.display="block";
     }else{
         drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
