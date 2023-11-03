@@ -106,7 +106,7 @@ function enToJn(letter){
 }
 function input(e){
     console.log(game.now);
-    if (e.key!="Enter"||game.now){
+    if (e.key!="Enter"&&game.now){
         enInput.text+=e.key;
         var inp=enToJn(enInput.text).split(""),ans=enToJn(enAnswer.text).split(""),printCharacter=enInput.text,prChD=false;
         while (inp[0]==ans[0]/*&&jn.includes(inp[0])*/&&ans.length!=0){
