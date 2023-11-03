@@ -8,7 +8,7 @@ const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,n,interval,countInterval,reExamCount=1000,
-    difficulty=localStorage.getItem('difficulty'),game={now:false};
+    difficulty=localStorage.getItem('difficulty'),game={now:false,pre:false};
 switch (difficulty){
     case "やさしい": {
         countInterval=750;
@@ -231,11 +231,15 @@ main();
 document.addEventListener("keypress",start,false);
 drawText(ctx,"24px Arial","#000000","キーを押して開始",(canvas.width-194)/2,(canvas.height-36)/2);
 function start(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    setTimeout(function(){
-    interval=setInterval(main,10);
-    game.now=true;
-    interval;
+    if (!game.pre){
+        game.pre=true;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        setTimeout(function(){
+        interval=setInterval(main,10);
+        game.now=true;
+        interval;
     },3500);
+    }
+    
 }
 
