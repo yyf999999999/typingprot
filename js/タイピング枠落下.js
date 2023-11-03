@@ -228,8 +228,13 @@ export {game};
 ring(music.countdown);
 count=-1;
 main();
-setTimeout(function(){
+document.addEventListener("keypress",start,false);
+drawText(ctx,"24px Arial","#000000","キーを押して開始",(canvas.width-194)/2,(canvas.height-36)/2);
+function start(){
+    setTimeout(function(){
     interval=setInterval(main,10);
     game.now=true;
     interval;
-},3500);
+    },3500);
+}
+
