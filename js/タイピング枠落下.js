@@ -133,6 +133,16 @@ function main(){
     }
     drawText(timeCtx,"24px Arial","#000000","ランキング",2,72);
     var rank=JSON.parse(localStorage.getItem("score"))[difficulty];
+    if (rank[4]<typeNumber.all){
+        for (i=4;i>=-1;i--){
+            if (i==-1)break;
+            if (rank[i]>typeNumber.all)break;
+        }
+        for (n=4;n>i;n--){
+            rank[n]=rank[n-1];
+        }
+        rank[i]=typeNumber.all;
+    }
     for (i=0;i<5;i++){
         drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(4+i));
     }
