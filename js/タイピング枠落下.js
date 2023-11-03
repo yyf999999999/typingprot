@@ -8,7 +8,7 @@ const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,n,interval,countInterval,reExamCount=1000,
-    difficulty=localStorage.getItem('difficulty'),game={now:false,pre:false};
+    difficulty=localStorage.getItem('difficulty'),game={now:false,pre:false},time=60;
 switch (difficulty){
     case "やさしい": {
         countInterval=750;
@@ -117,7 +117,7 @@ function main(){
     timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
     drawText(lineCtx,"24px Arial","#000000","60点ライン",36,24);
     drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
-    if (count>=0) drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(60-(count-controlCount)/100)+"秒",2,24);
+    if (count>=0) drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(time-(count-controlCount)/100)+"秒",2,24);
     else drawText(timeCtx,"24px Arial","#000000","残り時間:60秒",2,24);
     drawText(timeCtx,"24px Arial","#000000",`SCORE:${typeNumber.all}`,2,48);
     drawText(timeCtx,"24px Arial","#000000","試験ゲージ",2,474);
@@ -189,8 +189,8 @@ function main(){
         examContinue.ing=true;
     }
     if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
-    //console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
-    if (Math.ceil(60-(count-controlCount)/100)>0){
+    //console.log(examContinue,typeNumber.part,examCount,time-(count-controlCount)/100);
+    if (Math.ceil(time-(count-controlCount)/100)>0){
         if (count-examCount<250&&!examContinue.ing){
             if (count==examCount){
                 ringBgm(music.tbgm);
@@ -232,13 +232,13 @@ function main(){
         clearInterval(interval);
         finish();
     }
-    if (Math.ceil(60-(count-controlCount)/100)<=0){
+    if (Math.ceil(time-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");
+        clearInterval(interval);
         ring(music.gcbgm);
         //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
         drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
-        clearInterval(interval);
         finish();
     }
     count++;
