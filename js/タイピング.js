@@ -113,7 +113,7 @@ function enToJn(letter){
     return(sentence);
 }
 function input(e){
-    console.log(game.now);
+    //console.log(game.now);
     if (e.key!="Enter"&&game.now){
         enInput.text+=e.key;
         var inp=enToJn(enInput.text).split(""),ans=enToJn(enAnswer.text).split(""),printCharacter=enInput.text,prChD=false;
@@ -185,7 +185,7 @@ function input(e){
                 if (tfC){
                     ring(music.input[Math.floor(Math.random()*8)]);
                     typeNumber.part++;typeNumber.all++;
-                    console.log(typeNumber.part);
+                    //console.log(typeNumber.part);
                 }else{
                     ring(music.miss);
                     enInput.text=enInput.text.slice(0,-1);

@@ -47,7 +47,7 @@ function finish(){
             if (score[i]>typeNumber.all)break;
         }
         i++;
-        console.log(`i=${i}`);
+        //console.log(`i=${i}`);
         for (n=4;n>i;n--){
             score[n]=score[n-1];
             username[n]=username[n-1];
@@ -112,6 +112,7 @@ function drawOBlock(obj){
     obj.context.closePath();
 }
 function main(){
+    console.log(abgm[0]);
     ctx.clearRect(0,0,canvas.width,canvas.height);
     lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
     timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
@@ -143,8 +144,8 @@ function main(){
             rank[n]=rank[n-1];
         }
         rank[i]=typeNumber.all;
-        console.log(typeNumber.all);
-        console.log(rank);
+        //console.log(typeNumber.all);
+        //console.log(rank);
     }
     for (i=0;i<5;i++){
         drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(4+i));
@@ -174,7 +175,7 @@ function main(){
     }
     for (i=text.length-1;i>=0;i--){
         text[i].y+=0.25;
-        console.log(text[i]);
+        //console.log(text[i]);
         drawBlock(text[i]);
     }
     for (i=1;i<=fText.length;i++){
@@ -189,7 +190,7 @@ function main(){
         examContinue.ing=true;
     }
     if (typeNumber.part>typeNumber.standard&&count-examCount>2000) examCount=count;
-    console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
+    //console.log(examContinue,typeNumber.part,examCount,60-(count-controlCount)/100);
     if (Math.ceil(60-(count-controlCount)/100)>0){
         if (count-examCount<250&&!examContinue.ing){
             if (count==examCount){
@@ -199,12 +200,12 @@ function main(){
             drawText(ctx,"36px Arial","#000000","試験期間突入",(canvas.width-216)/2,(canvas.height-36)/2)
         }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
             if (examContinue.ing&&!examContinue.ed){
-                if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
+                if (count-examCount==reExamCount) //console.log("突入時タイプ数"+typeNumber.part);
                 if (count-examCount==reExamCount) {
                     controlCount=reExamCount;
                     ringBgm(music.tbgm);
                 }
-                console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
+                //console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
                 if (count-examCount==reExamCount+249){
                     controlCount=0;
                     count-=reExamCount;
