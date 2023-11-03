@@ -200,7 +200,10 @@ function main(){
         }else if (reExamCount+250>count-examCount&&count-examCount>=reExamCount){
             if (examContinue.ing&&!examContinue.ed){
                 if (count-examCount==reExamCount) console.log("突入時タイプ数"+typeNumber.part);
-                if (count-examCount==reExamCount) controlCount=reExamCount;
+                if (count-examCount==reExamCount) {
+                    controlCount=reExamCount;
+                    ringBgm(music.tbgm);
+                }
                 console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
                 if (count-examCount==reExamCount+249){
                     controlCount=0;
@@ -213,6 +216,7 @@ function main(){
                 if (count-examCount==1000){
                     countInterval*=2;
                     typeNumber.part=0;
+                    ringBgm(music.nbgm);
                 } 
                 if (count-examCount==1249) examContinue={ing:false,ed:false};
                 drawText(ctx,"36px Arial","#000000","試験期間終了",(canvas.width-216)/2,(canvas.height-36)/2);
@@ -221,6 +225,7 @@ function main(){
     }
     if (text.length>0) if (text[0].y>512){
         console.log("GAMEOVER");
+        ringBgm(music.gobgm);
         //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
         drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
         drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
