@@ -1,4 +1,4 @@
-import shareCount from "./タイピング枠落下.js";
+import {shareCount} from "./タイピング枠落下.js";
 const path="./../sounds/高専祭　2-I-E/";
 const write="penkaku0";
 const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
