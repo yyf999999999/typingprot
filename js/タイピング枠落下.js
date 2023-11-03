@@ -8,7 +8,7 @@ const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,n,interval,countInterval,reExamCount=1000,
-    difficulty=localStorage.getItem('difficulty'),shareCount={con:count};
+    difficulty=localStorage.getItem('difficulty'),game={now:false};shareCount
 switch (difficulty){
     case "やさしい": {
         countInterval=750;
@@ -38,6 +38,7 @@ switch (difficulty){
     }
 }
 function finish(){
+    game.now=false;
     var data=JSON.parse(localStorage.getItem("score")),uData=JSON.parse(localStorage.getItem("username"));
     var score=data[difficulty],username=uData[difficulty];
     if (score[4]<typeNumber.all){
@@ -63,7 +64,6 @@ function finish(){
     }
 }
 function drawBlock(letter){
-    shareCount.con=count;
     if (enWrite.text!=""&&i==0){
         letter.en=enWrite.text;
     }
@@ -230,5 +230,6 @@ count=-1;
 main();
 setTimeout(function(){
     interval=setInterval(main,10);
+    game.now=true;
     interval;
 },3500);

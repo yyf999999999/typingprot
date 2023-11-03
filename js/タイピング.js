@@ -1,4 +1,4 @@
-import {shareCount} from "./タイピング枠落下.js";
+import {game} from "./タイピング枠落下.js";
 const path="./../sounds/高専祭　2-I-E/";
 const write="penkaku0";
 const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
@@ -105,7 +105,7 @@ function enToJn(letter){
     return(sentence);
 }
 function input(e){
-    if (e.key!="Enter"||shareCount.con<0||shareCount.con>6000){
+    if (e.key!="Enter"||!game.now){
         enInput.text+=e.key;
         var inp=enToJn(enInput.text).split(""),ans=enToJn(enAnswer.text).split(""),printCharacter=enInput.text,prChD=false;
         while (inp[0]==ans[0]/*&&jn.includes(inp[0])*/&&ans.length!=0){
