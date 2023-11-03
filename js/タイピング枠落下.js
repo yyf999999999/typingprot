@@ -142,6 +142,8 @@ function main(){
             rank[n]=rank[n-1];
         }
         rank[i]=typeNumber.all;
+        console.log(typeNumber.all);
+        console.log(rank);
     }
     for (i=0;i<5;i++){
         drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(4+i));
