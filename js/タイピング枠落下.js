@@ -224,7 +224,7 @@ function main(){
     }
     count++;
 }
-export {shareCount};
+export {game};
 ring(music.countdown);
 count=-1;
 main();
