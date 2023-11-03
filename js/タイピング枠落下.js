@@ -225,7 +225,6 @@ function main(){
     count++;
 }
 export {game};
-ring(music.countdown);
 count=-1;
 main();
 document.addEventListener("keypress",start,false);
@@ -234,6 +233,7 @@ function start(){
     if (!game.pre){
         game.pre=true;
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        ring(music.countdown);
         setTimeout(function(){
         interval=setInterval(main,10);
         game.now=true;
