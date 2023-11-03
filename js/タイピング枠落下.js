@@ -131,7 +131,7 @@ function main(){
     }else{
         drawOBlock({context:timeCtx,x:2,y:478,width:146*(typeNumber.part/typeNumber.standard),height:32,fillColor:"#0000FF",strokeColor:"#000000"});
     }
-    drawText(timeCtx,"24px Arial","#000000","ランキング",2,72);
+    drawText(timeCtx,"24px Arial","#000000","ランキング",2,96);
     var rank=JSON.parse(localStorage.getItem("score"))[difficulty];
     if (rank[4]<typeNumber.all){
         for (i=4;i>=-1;i--){
@@ -143,11 +143,14 @@ function main(){
             rank[n]=rank[n-1];
         }
         rank[i]=typeNumber.all;
+        drawText(timeCtx,"24px Arial","#000000",`現在第${i+1}位`,2,72);
         //console.log(typeNumber.all);
         //console.log(rank);
+    }else{
+        drawText(timeCtx,"24px Arial","#000000",`現在ランク外`,2,72);
     }
     for (i=0;i<5;i++){
-        drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(4+i));
+        drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(5+i));
     }
     if (count%countInterval==0){
         var number=0,textX;
