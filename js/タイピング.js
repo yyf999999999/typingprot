@@ -190,8 +190,8 @@ function input(e){
         back.ans=JSON.parse(JSON.stringify(ans));back.printCharacter=printCharacter;
         enWrite.text=jnToEn(printCharacter+ans.splice(1).join(""));
     }else if(!game.now){
+        console.log(e.key);
         if (e.key="r"){
-            console.log(e.key);
             console.log("ページに飛びます");
         }
     }
