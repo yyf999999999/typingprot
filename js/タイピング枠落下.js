@@ -138,6 +138,7 @@ function main(){
             if (i==-1)break;
             if (rank[i]>typeNumber.all)break;
         }
+        i++;
         for (n=4;n>i;n--){
             rank[n]=rank[n-1];
         }
