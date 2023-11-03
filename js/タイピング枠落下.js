@@ -112,7 +112,6 @@ function drawOBlock(obj){
     obj.context.closePath();
 }
 function main(){
-    console.log(abgm[0]);
     ctx.clearRect(0,0,canvas.width,canvas.height);
     lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
     timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
@@ -194,6 +193,7 @@ function main(){
     if (Math.ceil(60-(count-controlCount)/100)>0){
         if (count-examCount<250&&!examContinue.ing){
             if (count==examCount){
+                ringBgm(music.tbgm);
                 countInterval/=2;
                 typeNumber.part=0;
             }
@@ -203,7 +203,6 @@ function main(){
                 if (count-examCount==reExamCount) //console.log("突入時タイプ数"+typeNumber.part);
                 if (count-examCount==reExamCount) {
                     controlCount=reExamCount;
-                    ringBgm(music.tbgm);
                 }
                 //console.log(count-examCount,reExamCount+249,count-examCount==reExamCount+249);
                 if (count-examCount==reExamCount+249){
@@ -260,6 +259,5 @@ function start(){
         abgm[0]=music.nbgm;ring(abgm[0]);
     },3500);
     }
-    
 }
 
