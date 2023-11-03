@@ -8,7 +8,7 @@ const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,n,interval,countInterval,reExamCount=1000,
-    difficulty=localStorage.getItem('difficulty');
+    difficulty=localStorage.getItem('difficulty'),shareCount={con:count};
 switch (difficulty){
     case "やさしい": {
         countInterval=750;
@@ -63,6 +63,7 @@ function finish(){
     }
 }
 function drawBlock(letter){
+    shareCount.con=count;
     if (enWrite.text!=""&&i==0){
         letter.en=enWrite.text;
     }
@@ -223,6 +224,7 @@ function main(){
     }
     count++;
 }
+export {shareCount};
 ring(music.countdown);
 count=-1;
 main();

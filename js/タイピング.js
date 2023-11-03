@@ -1,5 +1,6 @@
+import shareCount from "./タイピング枠落下.js";
 const path="./../sounds/高専祭　2-I-E/";
-const write="penkaku0"
+const write="penkaku0";
 const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
             input:[ new Audio(`${path}${write}1.mp3`),new Audio(`${path}${write}2.mp3`),
                     new Audio(`${path}${write}3.mp3`),new Audio(`${path}${write}4.mp3`),
@@ -104,7 +105,7 @@ function enToJn(letter){
     return(sentence);
 }
 function input(e){
-    if (e.key!="Enter"){
+    if (e.key!="Enter"||shareCount.con<0||shareCount.con>6000){
         enInput.text+=e.key;
         var inp=enToJn(enInput.text).split(""),ans=enToJn(enAnswer.text).split(""),printCharacter=enInput.text,prChD=false;
         while (inp[0]==ans[0]/*&&jn.includes(inp[0])*/&&ans.length!=0){
