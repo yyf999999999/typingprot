@@ -136,7 +136,7 @@ function main(){
     if (rank[4]<typeNumber.all){
         for (i=4;i>=-1;i--){
             if (i==-1)break;
-            if (rank[i]>typeNumber.all)break;
+            if (rank[i]>=typeNumber.all)break;
         }
         i++;
         for (n=4;n>i;n--){
