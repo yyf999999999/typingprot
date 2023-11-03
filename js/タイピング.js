@@ -7,7 +7,9 @@ const music={turn:new Audio(`${path}Book02-1(Flip).mp3`),
                     new Audio(`${path}${write}5.mp3`),new Audio(`${path}${write}6.mp3`),
                     new Audio(`${path}${write}7.mp3`),new Audio(`${path}${write}8.mp3`)
                     /*,new Audio(`${path}${write}9.mp3`),new Audio(`${path}${write}10.mp3`)*/],
-            miss:new Audio(`${path}buzzershort.mp3`),countdown:new Audio(`${path}countdown.mp3`)};
+            miss:new Audio(`${path}buzzershort.mp3`),countdown:new Audio(`${path}countdown.mp3`),
+            switch:new Audio(`${path}n74.mp3`),nbgm:new Audio(`${path}normal.mp3`),
+            tbgm:new Audio(`${path}oikomi.mp3`),gobgm:new Audio(`${path}totunyuu.mp3`)};
 var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と",
     "な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ",
     "わ","ゐ","ゑ","を","ん","ヴ","が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","ぢ","づ","で","ど",
@@ -45,9 +47,15 @@ var jn=["あ","い","う","え","お","か","き","く","け","こ","さ","し",
     enCharacter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
                 "q","r","s","t","u","v","w","x","y","z","-",",",".","/"],
     jnInput,jnVowel=jn.slice(0,5),enVowel=en.slice(0,5),enInput={text:""},enAnswer={text:""},
-    typeNumber={part:0,standard:100,all:0,limit:100},enWrite={text:""},back={printCharacter:"",ans:""},i,j,n;
+    typeNumber={part:0,standard:100,all:0,limit:100},enWrite={text:""},back={printCharacter:"",ans:""},i,j,n,abgm=[];
 for (i=0;i<enVowel.length;i++){
     enVowel[i]=enVowel[i][0];
+}
+function ringBgm(bgm){
+    abgm[0].pause();
+    ring(music.switch);
+    abgm[0]=bgm;
+    ring(abgm[0]);
 }
 function ring(sound){
     sound.currentTime=0;sound.play();
@@ -193,4 +201,4 @@ function input(e){
 }
 enAnswer.text="値変えまーすwww";
 document.addEventListener("keypress",input,false);
-export {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring};
+export {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring,ringBgm,abgm};

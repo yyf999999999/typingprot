@@ -1,5 +1,5 @@
 import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
-import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring} from "./タイピング.js";
+import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring,ringBgm,abgm} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
 const lineCanvas=document.getElementById("lineCanvas");
@@ -251,6 +251,7 @@ function start(){
         interval=setInterval(main,10);
         game.now=true;
         interval;
+        abgm[0]=music.nbgm;ring(abgm[0]);
     },3500);
     }
     
