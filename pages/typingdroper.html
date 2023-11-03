@@ -23,7 +23,8 @@
         <input type="text" id="username">
         <button onclick="user(document.getElementById('username').value)">登録</button>
         <script>
-            document.addEventListener("keypress",inputEnter,false);
+            const form=document.getElementById("username");
+            form.addEventListener("keypress",inputEnter,false);
             function inputEnter(e){
                 if (e.key=="Enter")user(document.getElementById('username').value);
             }
