@@ -44,7 +44,7 @@ function finish(){
     if (score[4]<typeNumber.all){
         for (i=4;i>=-1;i--){
             if (i==-1)break;
-            if (score[i]>typeNumber.all)break;
+            if (score[i]>=typeNumber.all)break;
         }
         i++;
         //console.log(`i=${i}`);
