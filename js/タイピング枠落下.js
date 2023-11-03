@@ -31,7 +31,7 @@ switch (difficulty){
         break;
     }
     case "地獄":{
-        countInterval=150;
+        countInterval=200;
         typeNumber.standard=125;
         difficulty="hell";
         break;
