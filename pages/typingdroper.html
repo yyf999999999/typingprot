@@ -29,7 +29,7 @@
             }
             function user(name){
                 var username=JSON.parse(localStorage.getItem("username")),difficulty=localStorage.getItem("difficulty");
-                if (name.length>10||name.value==0){
+                if (name.length>10||name.length==0){
                     document.getElementById("notification").innerHTML="1文字以上10文字以下で入力してください";
                 }else{
                     switch (difficulty){
