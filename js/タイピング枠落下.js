@@ -231,6 +231,7 @@ main();
 document.addEventListener("keypress",start,false);
 drawText(ctx,"24px Arial","#000000","キーを押して開始",(canvas.width-194)/2,(canvas.height-36)/2);
 function start(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     setTimeout(function(){
     interval=setInterval(main,10);
     game.now=true;
