@@ -177,7 +177,7 @@ function main(){
             typeNumber.part++;typeNumber.all++;
             ring(music.input[Math.floor(Math.random()*8)]);
             ring(music.turn);
-            enInput.text="";enWrite.text="";
+            enInput.text="";enWrite.text="";enAnswer.text="絶対打てない";
             if (text.length>0) text[0].en=text[0].enC;
         }
     }
