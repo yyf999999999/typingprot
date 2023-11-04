@@ -102,6 +102,11 @@
                 <li id="hell5">0</li>
             </ol><br>
             <script>
+                function scoreReset(){
+                    localStorage.setItem("score",JSON.stringify({easy:[0,0,0,0,0],normal:[0,0,0,0,0],hard:[0,0,0,0,0],hell:[0,0,0,0,0]}));
+                    localStorage.setItem("username",JSON.stringify({easy:["名無し","名無し","名無し","名無し","名無し"],normal:["名無し","名無し","名無し","名無し","名無し"],hard:["名無し","名無し","名無し","名無し","名無し"],hell:["名無し","名無し","名無し","名無し","名無し"]}))
+                }
+                if (localStorage.getItem("username")==null)scoreReset();
                 const data=JSON.parse(localStorage.getItem("score")),username=JSON.parse(localStorage.getItem("username"));
                 const key=Object.keys(data)
                 for (n=0;n<4;n++){
@@ -109,11 +114,6 @@
                         document.getElementById(`${key[n]}${i+1}`).textContent=username[key[n]][i]+"_"+data[key[n]][i];
                     }
                 }
-                function scoreReset(){
-                    localStorage.setItem("score",JSON.stringify({easy:[0,0,0,0,0],normal:[0,0,0,0,0],hard:[0,0,0,0,0],hell:[0,0,0,0,0]}));
-                    localStorage.setItem("username",JSON.stringify({easy:["名無し","名無し","名無し","名無し","名無し"],normal:["名無し","名無し","名無し","名無し","名無し"],hard:["名無し","名無し","名無し","名無し","名無し"],hell:["名無し","名無し","名無し","名無し","名無し"]}))
-                }
-                if (localStorage.getItem("username")==null)scoreReset();
             </script>
             <button onclick="scoreReset();">スコアを初期化する</button>
         </div>
