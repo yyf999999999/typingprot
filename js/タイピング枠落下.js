@@ -43,6 +43,7 @@ function finish(result){
     var data=JSON.parse(localStorage.getItem("score")),uData=JSON.parse(localStorage.getItem("username"));
     var score=data[difficulty],username=uData[difficulty];
     if (score[4]<typeNumber.all){
+        drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#000000"});
         for (i=4;i>=-1;i--){
             if (i==-1)break;
             if (score[i]>=typeNumber.all)break;
@@ -61,6 +62,7 @@ function finish(result){
         localStorage.setItem("rank",i);
         document.getElementById("form").style.display="block";
     }else{
+        drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#000000"});
         drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
     }
     drawText(ctx,"36px Arial","#000000",result,(canvas.width-72)/2,(canvas.height-36)/2);
@@ -233,7 +235,7 @@ function main(){
     if (text.length>0) if (text[0].y>512){
         console.log("GAMEOVER");
         ringBgm(music.gobgm);
-        //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
+        //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#000000"});
         //drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
         //drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
@@ -243,7 +245,7 @@ function main(){
         console.log("GAMECLEAR");
         clearInterval(interval);
         ring(music.gcbgm);
-        //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
+        //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#000000"});
         //drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
         //drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         finish("進級");
