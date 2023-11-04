@@ -120,8 +120,8 @@ function main(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     lineCtx.clearRect(0,0,lineCanvas.width,lineCanvas.height);
     timeCtx.clearRect(0,0,timeCanvas.width,timeCanvas.height);
-    drawText(lineCtx,"24px Arial","#000000","60点ライン",36,24);
-    drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
+    drawText(lineCtx,"24px Arial","#000000","60点ライン",60,24);
+    drawText(lineCtx,"24px Arial","#FF0000","0点ライン",72,510);
     if (count>=0) drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(time-(count-controlCount)/100)+"秒",2,24);
     else drawText(timeCtx,"24px Arial","#000000","残り時間:60秒",2,24);
     drawText(timeCtx,"24px Arial","#000000",`難易度:${nDifficulty}`,2,48);
