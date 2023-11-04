@@ -38,7 +38,7 @@ switch (difficulty){
         break;
     }
 }
-function finish(){
+function finish(result){
     game.now=false;
     var data=JSON.parse(localStorage.getItem("score")),uData=JSON.parse(localStorage.getItem("username"));
     var score=data[difficulty],username=uData[difficulty];
@@ -63,6 +63,8 @@ function finish(){
     }else{
         drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
     }
+    drawText(ctx,"36px Arial","#000000",result,(canvas.width-72)/2,(canvas.height-36)/2);
+    drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
 }
 function drawBlock(letter){
     if (enWrite.text!=""&&i==0){
@@ -232,19 +234,19 @@ function main(){
         console.log("GAMEOVER");
         ringBgm(music.gobgm);
         //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
-        drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
-        drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
+        //drawText(ctx,"36px Arial","#000000","留年",(canvas.width-72)/2,(canvas.height-36)/2);
+        //drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
         clearInterval(interval);
-        finish();
+        finish("留年");
     }
     if (Math.ceil(time-(count-controlCount)/100)<=0){
         console.log("GAMECLEAR");
         clearInterval(interval);
         ring(music.gcbgm);
         //drawOBlock({context:ctx,x:(canvas.width-492)/2-8,y:(canvas.height-36)/2-34,width:508,height:114,fillColor:"#FFFFFF",strokeColor:"#FFFFFF"});
-        drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
-        drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
-        finish();
+        //drawText(ctx,"36px Arial","#000000","進級",(canvas.width-72)/2,(canvas.height-36)/2);
+        //drawText(ctx,"24px Arial","#000000","SCORE:"+typeNumber.all,(canvas.width-136)/2,(canvas.height-36)/2+30);
+        finish("進級");
     }
     count++;
 }
