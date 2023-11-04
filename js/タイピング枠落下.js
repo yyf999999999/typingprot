@@ -62,7 +62,7 @@ function finish(result){
         localStorage.setItem("rank",i);
         document.getElementById("form").style.display="block";
     }else{
-        drawOBlock({context:ctx,x:(canvas.width-196)/2-8,y:(canvas.height-36)/2-34,width:204,height:94,fillColor:"#FFFFFF",strokeColor:"#000000"});
+        drawOBlock({context:ctx,x:(canvas.width-196)/2-8,y:(canvas.height-36)/2-34,width:208,height:94,fillColor:"#FFFFFF",strokeColor:"#000000"});
         drawText(ctx,"24px Arial","#000000","ランクインならず",(canvas.width-194)/2,(canvas.height-36)/2+56);
     }
     drawText(ctx,"36px Arial","#000000",result,(canvas.width-72)/2,(canvas.height-36)/2);
