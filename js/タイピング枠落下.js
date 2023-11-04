@@ -120,7 +120,7 @@ function main(){
     drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
     if (count>=0) drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(time-(count-controlCount)/100)+"秒",2,24);
     else drawText(timeCtx,"24px Arial","#000000","残り時間:60秒",2,24);
-    drawText(timeCtx,"24px Arial","#000000",`現在の難易度:${nDifficulty}`,2,48);
+    drawText(timeCtx,"24px Arial","#000000",`難易度:${nDifficulty}`,2,48);
     drawText(timeCtx,"24px Arial","#000000",`SCORE:${typeNumber.all}`,2,72);
     drawText(timeCtx,"24px Arial","#000000","試験ゲージ",2,474);
     drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
