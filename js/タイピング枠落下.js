@@ -8,7 +8,8 @@ const timeCanvas=document.getElementById("timeCanvas");
 const timeCtx=timeCanvas.getContext("2d");
 var text=[],fText=[],examContinue={ing:false,ed:false},
     count=0,examCount=-2000,controlCount=0,letter,i,n,interval,countInterval,reExamCount=1000,
-    difficulty=localStorage.getItem('difficulty'),game={now:false,pre:false},time=60;
+    difficulty=localStorage.getItem('difficulty'),game={now:false,pre:false},time=60,nDifficulty;
+nDifficulty=difficulty;
 switch (difficulty){
     case "やさしい": {
         countInterval=750;
@@ -119,7 +120,8 @@ function main(){
     drawText(lineCtx,"24px Arial","#FF0000","0点ライン",48,510);
     if (count>=0) drawText(timeCtx,"24px Arial","#000000","残り時間:"+Math.ceil(time-(count-controlCount)/100)+"秒",2,24);
     else drawText(timeCtx,"24px Arial","#000000","残り時間:60秒",2,24);
-    drawText(timeCtx,"24px Arial","#000000",`SCORE:${typeNumber.all}`,2,48);
+    drawText(timeCtx,"24px Arial","#000000",`現在の難易度:${nDifficulty}`,2,48);
+    drawText(timeCtx,"24px Arial","#000000",`SCORE:${typeNumber.all}`,2,72);
     drawText(timeCtx,"24px Arial","#000000","試験ゲージ",2,474);
     drawOBlock({context:timeCtx,x:2,y:478,width:146,height:32,fillColor:"#FFFFFF",strokeColor:"#000000"});
     if (count-examCount<1000||controlCount!=0){
@@ -131,7 +133,7 @@ function main(){
     }else{
         drawOBlock({context:timeCtx,x:2,y:478,width:146*(typeNumber.part/typeNumber.standard),height:32,fillColor:"#0000FF",strokeColor:"#000000"});
     }
-    drawText(timeCtx,"24px Arial","#000000","ランキング",2,96);
+    drawText(timeCtx,"24px Arial","#000000","ランキング",2,120);
     var rank=JSON.parse(localStorage.getItem("score"))[difficulty];
     if (rank[4]<typeNumber.all){
         for (i=4;i>=-1;i--){
@@ -143,14 +145,14 @@ function main(){
             rank[n]=rank[n-1];
         }
         rank[i]=typeNumber.all;
-        drawText(timeCtx,"24px Arial","#000000",`現在第${i+1}位`,2,72);
+        drawText(timeCtx,"24px Arial","#000000",`現在第${i+1}位`,2,96);
         //console.log(typeNumber.all);
         //console.log(rank);
     }else{
-        drawText(timeCtx,"24px Arial","#000000",`現在ランク外`,2,72);
+        drawText(timeCtx,"24px Arial","#000000",`現在ランク外`,2,96);
     }
     for (i=0;i<5;i++){
-        drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(5+i));
+        drawText(timeCtx,"24px Arial","#000000",`${i+1}.${rank[i]}`,2,24*(6+i));
     }
     if (count%countInterval==0){
         var number=0,textX;
