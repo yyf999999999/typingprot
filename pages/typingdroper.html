@@ -51,6 +51,21 @@
     </div>
     <p id="notification" class="topDiv" style="display:block"></p>
     <!--<p id="zeroLine">0点ライン</p>-->
+    <script type="module">
+    document.addEventListener("DOMContentLoaded", function() {
+        const canvas = document.getElementById("canvas");
+        if (canvas) {
+            const ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(100, 100, 50, 50);
+            ctx.fillStyle = "#000000";
+            ctx.fill();
+            ctx.closePath();
+        } else {
+            console.error("Canvas element not found!");
+        }
+    });
+    </script>
     <script type="module" src="./../js/タイピング枠落下.js"></script>
 </body>
 </html>
