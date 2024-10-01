@@ -1,4 +1,15 @@
-import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
+//import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
+async function loadJSON() {
+    try {
+        const textWarehouse = await import('./../json/タイピング枠落下.json');
+        console.log(textWarehouse);
+    } catch (err) {
+        console.error('Error importing the JSON file:', err);
+    }
+}
+
+loadJSON();
+
 import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring,ringBgm,abgm} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
 const ctx=canvas.getContext("2d");
