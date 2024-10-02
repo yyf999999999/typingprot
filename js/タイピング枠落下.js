@@ -1,4 +1,4 @@
-import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
+import textWarehouse from "./../json/タイピング枠落下.json" with{type:"json"};
 /*let textWarehouse = [];
 
 async function loadJSON() {
