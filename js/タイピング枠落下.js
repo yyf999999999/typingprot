@@ -1,12 +1,17 @@
 //import textWarehouse from "./../json/タイピング枠落下.json" assert{type:"json"};
+let textWarehouse = [];
+
 async function loadJSON() {
     try {
         const response = await fetch('https://yyf999999999.github.io/typingprot/json/%E3%82%BF%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0%E6%9E%A0%E8%90%BD%E4%B8%8B.json');
-        if (!response.ok) {
+        if (!response.ok) { 
             throw new Error('Network response was not ok ' + response.statusText);
         }
-        const textWarehouse = await response.json();
+        textWarehouse = await response.json();
         console.log(textWarehouse);
+
+        // ゲームの準備ができたらメイン処理を開始
+        main(); 
     } catch (err) {
         console.error('Error fetching the JSON file:', err);
     }
