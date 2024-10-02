@@ -1,23 +1,4 @@
 import textWarehouse from "./../json/タイピング枠落下.json" with{type:"json"};
-/*let textWarehouse = [];
-
-async function loadJSON() {
-    try {
-        const response = await fetch('https://yyf999999999.github.io/typingprot/json/%E3%82%BF%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0%E6%9E%A0%E8%90%BD%E4%B8%8B.json');
-        if (!response.ok) { 
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        textWarehouse = await response.json();
-        console.log(textWarehouse);
-
-        // ゲームの準備ができたらメイン処理を開始
-        main(); 
-    } catch (err) {
-        console.error('Error fetching the JSON file:', err);
-    }
-}
-
-loadJSON();*/
 
 import {enToJn,enInput,enAnswer,enWrite,back,typeNumber,music,ring,ringBgm,abgm} from "./タイピング.js";
 const canvas=document.getElementById("canvas");
@@ -182,6 +163,7 @@ function main(){
         var number=0,textX;
         while (typeNumber.limit<textWarehouse[number].en.length){
             var number=Math.floor(Math.random()*textWarehouse.length);
+            console.log(number,textWarehouse[number].en.length);
         }
         if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
             textX=Math.floor(Math.random()*(canvas.width/1.25-textWarehouse[number].jn.length*24-25))+9;
