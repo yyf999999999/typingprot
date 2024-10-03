@@ -161,10 +161,9 @@ function main(){
     }
     if (count%countInterval==0){
         var number=0,textX;
-        console.log(number,textWarehouse[number].en.length);
+        console.log(number,textWarehouse[number].en.length,typeNumber.limit);
         while (typeNumber.limit<textWarehouse[number].en.length){
             var number=Math.floor(Math.random()*textWarehouse.length);
-            console.log(number,textWarehouse[number].en.length);
         }
         if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
             textX=Math.floor(Math.random()*(canvas.width/1.25-textWarehouse[number].jn.length*24-25))+9;
