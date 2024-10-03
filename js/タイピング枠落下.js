@@ -167,7 +167,7 @@ function main(){
         }while (typeNumber.limit<textWarehouse[number].en.length);
         /*while (typeNumber.limit<textWarehouse[number].en.length){
             var number=Math.floor(Math.random()*textWarehouse.length);
-        }/*
+        }*/
         if (textWarehouse[number].en.length>textWarehouse[number].jn.length*2){
             textX=Math.floor(Math.random()*(canvas.width/1.25-textWarehouse[number].jn.length*24-25))+9;
         }else{
