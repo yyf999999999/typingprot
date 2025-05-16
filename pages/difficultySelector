@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リダイレクトページ</title>
+    <script type="text/javascript">
+        setTimeout(function() {
+            window.location.href = "./difficultySelecter.html";
+        }, 0);  // 3000ミリ秒（3秒）後にリダイレクト
+    </script>
+</head>
+<body>
+</body>
+</html>
